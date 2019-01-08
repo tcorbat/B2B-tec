@@ -1,4 +1,4 @@
-#Week 1 Exercise - Object-Oriented AnalysisIntroduction
+#Week 1 Exercise - Object-Oriented Analysis Introduction
 
 ## Overview
 
@@ -8,7 +8,7 @@
 
 ## Domain Analysis Exercises
 
-1. Find the “real-world” objects (Candidates)
+1. Find the "real-world" objects (Candidates)
     Please read the Vision document again and the additional requirements document. 
 	* Break team into groups of four or five.
     * Find the Candidates:
@@ -27,7 +27,7 @@
         * Especially collaborations to general-purpose objects are omitted.
         * Write down one side of the collaboration only (=reading direction).
     * Write them into the Collaborators section.
-    * Refine your CRC Cards by doing Step 1 and Step 2again and again…
+    * Refine your CRC Cards by doing Step 1 and Step 2 again and again…
 
 
 ## Domain Modeling Exercise
@@ -43,4 +43,4 @@ Transfer your CRC cards into a Domain Model.
 
 ## Solution
 
-* See [solution folder](./solution)
+* See [solution folder](../solution)
