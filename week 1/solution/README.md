@@ -2,10 +2,4 @@
 
 ## Domain Analysis Exercises
 
-See [CRC_Cards_1.0.pdf](../solution/CRC_Cards_1.0.pdf)
-
-
-## Domain Modeling Exercise
-
-See [Domain_Model_1.0.pdf](../solution/Domain_Model_1.0.pdf)
-
+See [OOA CRC Cards - Proposal for Solution](https://moodle.hsr.ch/pluginfile.php/98119/mod_folder/content/0/VL01%20OOA-CRC-Cards_Proposal-for-Solution.pdf?forcedownload=1)
