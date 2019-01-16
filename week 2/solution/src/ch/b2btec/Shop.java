@@ -1,10 +1,5 @@
 package ch.b2btec;
 
-import java.util.ArrayList;
-
-import javax.swing.UIManager;
-
-import ch.b2btec.log.Logger;
 import ch.b2btec.ui.MainController;
 import ch.b2btec.ui.MainFrame;
 
@@ -31,8 +26,7 @@ public class Shop {
 	void run(String[] args) {
 		// create application and window specific instances
 		context = new ApplicationContext(args);
-		MainFrame mainWindow = new MainFrame();
-		mainWindow.setContext(context);
+		MainFrame mainWindow = new MainFrame(context);
 		controller = new MainController(mainWindow, context);
 		controller.show();
 	}

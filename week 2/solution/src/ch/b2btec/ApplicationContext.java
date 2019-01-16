@@ -1,6 +1,8 @@
 package ch.b2btec;
 
 import ch.b2btec.bl.BusinessContext;
+import ch.b2btec.bl.UserManagement;
+import ch.b2btec.bl.UserManagementService;
 
 /**
  * Provides the globally needed instances. May be replaced with a
@@ -40,5 +42,9 @@ public class ApplicationContext {
 	 */
 	public String[] getParams() {
 		return params;
+	}
+
+	public UserManagement getUserManagement() {
+		return new UserManagementService();
 	}
 }
