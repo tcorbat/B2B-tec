@@ -2,14 +2,12 @@ package ch.b2btec.ui.models;
 
 import static ch.b2btec.utils.StringUtils.isNullOrEmpty;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import java.util.function.Consumer;
 
 import ch.b2btec.bl.UserManagement;
 import ch.b2btec.bl.domain.Customer;
 
-public class LoginModel {
+public class LoginModel extends ObservableModel {
 	public enum Property {
 		Username, Password, Message
 	}
@@ -18,16 +16,6 @@ public class LoginModel {
 	private static final String PASSWORD_IS_EMPTY = "Password must not be empty";
 	private static final String INVALID_LOGIN = "Invalid username/password combination";
 	private static final String LOGIN_SUCCESSFUL = "Login successful, welcome ";
-
-	private final PropertyChangeSupport observable = new PropertyChangeSupport(this);
-
-	public void addPropertyChangeListener(PropertyChangeListener listener) {
-		observable.addPropertyChangeListener(listener);
-	}
-
-	public void removePropertyChangeListener(PropertyChangeListener listener) {
-		observable.removePropertyChangeListener(listener);
-	}
 
 	private String username;
 	private String password;

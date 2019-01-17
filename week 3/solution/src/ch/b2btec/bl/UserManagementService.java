@@ -21,7 +21,7 @@ public class UserManagementService implements UserManagement {
 
 	@Override
 	public Optional<Customer> login(String username, String password) {
-		Optional<Customer> customer = Optional.ofNullable(customers.get(username));
+		Optional<Customer> customer = Optional.ofNullable(customers.get(username.toLowerCase()));
 		return customer.filter(c -> c.getProfile().getCredentials().verifyPassword(password));
 	}
 
