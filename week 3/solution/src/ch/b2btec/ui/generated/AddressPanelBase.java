@@ -1,9 +1,11 @@
 package ch.b2btec.ui.generated;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -12,17 +14,18 @@ public class AddressPanelBase extends JPanel {
 	private static final long serialVersionUID = -5008790770625987927L;
 
 	protected JTextField streetField;
-	protected JTextField houseNumberField;
-	protected JTextField zipCodeField;
+	protected JFormattedTextField houseNumberField;
+	protected JFormattedTextField zipCodeField;
 	protected JTextField cityField;
 	protected JTextField countryField;
+	protected JLabel messageLabel;
 
 	public AddressPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 100, 0, 30 };
-		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 30 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 0.0 };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 		setLayout(gridBagLayout);
 
 		JLabel lblStreet = new JLabel("Street:");
@@ -50,10 +53,10 @@ public class AddressPanelBase extends JPanel {
 		gbc_lblHouseNumber.gridy = 1;
 		add(lblHouseNumber, gbc_lblHouseNumber);
 
-		houseNumberField = new JTextField();
+		houseNumberField = new JFormattedTextField();
 		GridBagConstraints gbc_houseNumberField = new GridBagConstraints();
 		gbc_houseNumberField.anchor = GridBagConstraints.WEST;
-		gbc_houseNumberField.insets = new Insets(5, 0, 5, 0);
+		gbc_houseNumberField.insets = new Insets(5, 0, 5, 5);
 		gbc_houseNumberField.gridx = 1;
 		gbc_houseNumberField.gridy = 1;
 		add(houseNumberField, gbc_houseNumberField);
@@ -67,10 +70,10 @@ public class AddressPanelBase extends JPanel {
 		gbc_lblZipCode.gridy = 2;
 		add(lblZipCode, gbc_lblZipCode);
 
-		zipCodeField = new JTextField();
+		zipCodeField = new JFormattedTextField();
 		GridBagConstraints gbc_zipCodeField = new GridBagConstraints();
 		gbc_zipCodeField.anchor = GridBagConstraints.WEST;
-		gbc_zipCodeField.insets = new Insets(5, 0, 5, 0);
+		gbc_zipCodeField.insets = new Insets(5, 0, 5, 5);
 		gbc_zipCodeField.gridx = 1;
 		gbc_zipCodeField.gridy = 2;
 		add(zipCodeField, gbc_zipCodeField);
@@ -86,7 +89,7 @@ public class AddressPanelBase extends JPanel {
 
 		cityField = new JTextField();
 		GridBagConstraints gbc_cityField = new GridBagConstraints();
-		gbc_cityField.insets = new Insets(5, 0, 5, 0);
+		gbc_cityField.insets = new Insets(5, 0, 5, 5);
 		gbc_cityField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_cityField.gridx = 1;
 		gbc_cityField.gridy = 3;
@@ -103,11 +106,20 @@ public class AddressPanelBase extends JPanel {
 
 		countryField = new JTextField();
 		GridBagConstraints gbc_countryField = new GridBagConstraints();
-		gbc_countryField.insets = new Insets(5, 0, 5, 0);
+		gbc_countryField.insets = new Insets(5, 0, 5, 5);
 		gbc_countryField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_countryField.gridx = 1;
 		gbc_countryField.gridy = 4;
 		add(countryField, gbc_countryField);
 		countryField.setColumns(10);
+
+		messageLabel = new JLabel("");
+		messageLabel.setForeground(Color.RED);
+		GridBagConstraints gbc_messageLabel = new GridBagConstraints();
+		gbc_messageLabel.gridwidth = 2;
+		gbc_messageLabel.insets = new Insets(5, 0, 0, 5);
+		gbc_messageLabel.gridx = 0;
+		gbc_messageLabel.gridy = 5;
+		add(messageLabel, gbc_messageLabel);
 	}
 }

@@ -1,15 +1,11 @@
-package ch.b2btec.ui.models;
+package ch.b2btec.utils;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-public class ObservableModel {
+public class PropertyObservable {
 
 	protected final PropertyChangeSupport observable = new PropertyChangeSupport(this);
-
-	public ObservableModel() {
-		super();
-	}
 
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
 		observable.addPropertyChangeListener(listener);

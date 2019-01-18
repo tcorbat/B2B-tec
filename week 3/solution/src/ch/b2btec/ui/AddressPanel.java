@@ -9,7 +9,7 @@ import javax.swing.event.DocumentListener;
 
 import ch.b2btec.ui.generated.AddressPanelBase;
 import ch.b2btec.ui.models.AddressModel;
-import ch.b2btec.ui.models.LoginModel.Property;
+import ch.b2btec.ui.models.AddressModel.Property;
 
 public class AddressPanel extends AddressPanelBase implements PropertyChangeListener {
 
@@ -40,22 +40,35 @@ public class AddressPanel extends AddressPanelBase implements PropertyChangeList
 		}
 	}
 
-	private final AddressModel model;
 
+	private final AddressModel model;
 
 	public AddressPanel(AddressModel model) {
 		this.model = model;
+		streetField.setText(model.getStreetName());
+		houseNumberField.setText(model.getHouseNumber());
+		zipCodeField.setText(model.getZipCode());
+		cityField.setText(model.getCity());
+		countryField.setText(model.getCountry());
+
 		InputEventDelegator inputHandler = new InputEventDelegator(this::updateInput);
-		model.addPropertyChangeListener(this);
 		streetField.getDocument().addDocumentListener(inputHandler);
+		houseNumberField.getDocument().addDocumentListener(inputHandler);
+		zipCodeField.getDocument().addDocumentListener(inputHandler);
+		cityField.getDocument().addDocumentListener(inputHandler);
+		countryField.getDocument().addDocumentListener(inputHandler);
+		model.addPropertyChangeListener(this);
 	}
 
 	private void updateInput(DocumentEvent event) {
+		model.removePropertyChangeListener(this);
 		model.setStreetName(streetField.getText());
-		model.setHouseNumber(Integer.parseInt(houseNumberField.getText()));
-		model.setZipCode(Integer.parseInt(zipCodeField.getText()));
+		model.setHouseNumber(houseNumberField.getText());
+		model.setZipCode(zipCodeField.getText());
 		model.setCity(cityField.getText());
 		model.setCountry(countryField.getText());
+		model.addPropertyChangeListener(this);
+		messageLabel.setText(model.getMessage());
 	}
 
 	@Override
@@ -63,13 +76,22 @@ public class AddressPanel extends AddressPanelBase implements PropertyChangeList
 		Property property = Property.valueOf(evt.getPropertyName());
 		switch (property) {
 		case Message:
-			lblMessage.setText(model.getMessage());
+			messageLabel.setText(model.getMessage());
 			break;
-		case Username:
-			txtUsername.setText(model.getUsername());
+		case StreetName:
+			streetField.setText(model.getStreetName());
 			break;
-		case Password:
-			passwordField.setText(model.getPassword());
+		case HouseNumber:
+			houseNumberField.setText(model.getHouseNumber());
+			break;
+		case ZipCode:
+			zipCodeField.setText(model.getZipCode());
+			break;
+		case City:
+			cityField.setText(model.getCity());
+			break;
+		case Country:
+			countryField.setText(model.getCountry());
 			break;
 		}
 	}

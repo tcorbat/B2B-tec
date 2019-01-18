@@ -57,7 +57,7 @@ class ShoppingCartTests {
 	void testAddingMultipleDifferentProducts() {
 		var cart = new ShoppingCart();
 		cart.addProduct(DEFAULT_PRODUCT);
-		var otherProduct = new Product(999, "Mug", "Holds coffee", "2dl");
+		var otherProduct = new Product(999, "Mug", 5, "Holds coffee", "2dl");
 		cart.addProduct(otherProduct);
 
 		var positions = cart.getPositions();

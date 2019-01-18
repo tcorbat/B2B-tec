@@ -6,8 +6,9 @@ import java.util.function.Consumer;
 
 import ch.b2btec.bl.UserManagement;
 import ch.b2btec.bl.domain.Customer;
+import ch.b2btec.utils.PropertyObservable;
 
-public class LoginModel extends ObservableModel {
+public class LoginModel extends PropertyObservable {
 	public enum Property {
 		Username, Password, Message
 	}

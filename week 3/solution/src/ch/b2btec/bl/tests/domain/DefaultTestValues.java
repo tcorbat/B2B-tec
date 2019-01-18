@@ -23,9 +23,10 @@ public class DefaultTestValues {
 	static final Profile DEFAULT_PROFILE = new Profile(DEFAULT_CREDENTIALS, DEFAULT_ADDRESS);
 	static final int DEFAULT_PRODUCT_NUMBER = 123;
 	static final String DEFAULT_PRODUCT_NAME = "Product 123";
+	static final int DEFAULT_PRICE = 50;
 	static final String DEFAULT_DESCRIPTION = "Description of Product 123";
 	static final String DEFAULT_SPECIFICATION = "Specification of Product 123";
-	static final Product DEFAULT_PRODUCT = new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME,
+	static final Product DEFAULT_PRODUCT = new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, DEFAULT_PRICE,
 			DEFAULT_DESCRIPTION, DEFAULT_SPECIFICATION);
 	static final Address DEFAULT_DELIVERY_ADDRESS = new Address("Main Street", 42, 1000, "Somewhere", "Wakkanda");
 	static final Address DEFAULT_BILLING_ADDRESS = new Address("Second Street", 21, 2000, "Nowhere", "Lalaland");

@@ -5,7 +5,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class ShoppingCart {
+import ch.b2btec.utils.PropertyObservable;
+
+public class ShoppingCart extends PropertyObservable {
+	public enum Property {
+		POSITIONS
+	}
 	private final ArrayList<OrderPosition> positions = new ArrayList<>();
 
 	public List<OrderPosition> getPositions() {
@@ -18,7 +23,10 @@ public class ShoppingCart {
 		if (position.isPresent()) {
 			position.get().incrementQuantity();
 		} else {
-			positions.add(new OrderPosition(product, 1));
+			var newPosition = new OrderPosition(product, 1);
+			positions.add(newPosition);
+			observable.fireIndexedPropertyChange(Property.POSITIONS.toString(), positions.size() - 1, null,
+					newPosition);
 		}
 	}
 
