@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 public class ShoppingCartSummaryPanelBase extends JPanel {
 
 	private static final long serialVersionUID = -1210355492871056351L;
-	private final JLabel itemsInCartLabel;
-	private final JLabel totalPriceLabel;
+	protected final JLabel itemsInCartLabel;
+	protected final JLabel totalPriceLabel;
 
 	public ShoppingCartSummaryPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -21,7 +21,7 @@ public class ShoppingCartSummaryPanelBase extends JPanel {
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0 };
 		setLayout(gridBagLayout);
 
-		JLabel lblShoppingCart = new JLabel("Shopping Cart:");
+		JLabel lblShoppingCart = new JLabel("Items in Cart:");
 		GridBagConstraints gbc_lblShoppingCart = new GridBagConstraints();
 		gbc_lblShoppingCart.anchor = GridBagConstraints.EAST;
 		gbc_lblShoppingCart.insets = new Insets(5, 5, 5, 5);
