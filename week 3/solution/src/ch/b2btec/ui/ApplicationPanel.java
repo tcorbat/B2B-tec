@@ -6,22 +6,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import ch.b2btec.bl.CatalogManagement;
 import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.ui.generated.ApplicationPanelBase;
 import ch.b2btec.ui.models.AddressModel;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
-public class ApplicationPanel extends ApplicationPanelBase {
+public class ApplicationPanel extends ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> {
 	private static final long serialVersionUID = 1547788347753286322L;
 
-	public ApplicationPanel(Customer customer, OrderManagement orderManagement) {
-		super(customer, orderManagement);
+	public ApplicationPanel(Customer customer, OrderManagement orderManagement, CatalogManagement catalogManagement) {
+		super(customer, orderManagement, catalogManagement);
 	}
 
 	@Override
-	protected JPanel createShopTab() {
-		return new ShopPanel();
+	protected JPanel createShopTab(CatalogManagement catalogManagement) {
+		return new ShopPanel(catalogManagement);
 	}
 
 	@Override

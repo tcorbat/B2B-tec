@@ -6,6 +6,8 @@ import java.io.IOException;
 import ch.b2btec.bl.BusinessContext;
 import ch.b2btec.bl.CatalogManagement;
 import ch.b2btec.bl.CatalogManagementService;
+import ch.b2btec.bl.OrderManagement;
+import ch.b2btec.bl.OrderManagementService;
 import ch.b2btec.bl.UserManagement;
 import ch.b2btec.bl.UserManagementService;
 
@@ -19,6 +21,7 @@ import ch.b2btec.bl.UserManagementService;
 public class ApplicationContext {
 	private final CatalogManagementService catalogManagement;
 	private final UserManagementService userManagement;
+	private final OrderManagement orderManagement;
 	private BusinessContext dataCtx;
 	private String[] params;
 	
@@ -33,6 +36,7 @@ public class ApplicationContext {
 		this.params = params;
 		catalogManagement = new CatalogManagementService("catalog.json");
 		userManagement = new UserManagementService();
+		orderManagement = new OrderManagementService();
 	}
 	
 	/**
@@ -61,5 +65,9 @@ public class ApplicationContext {
 	
 	public CatalogManagement getCatalogManagement() {
 		return catalogManagement;
+	}
+
+	public OrderManagement getOrderManagement() {
+		return orderManagement;
 	}
 }

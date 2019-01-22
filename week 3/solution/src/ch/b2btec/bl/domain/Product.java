@@ -69,4 +69,9 @@ public class Product {
 			throw new IllegalArgumentException("Product specification cannot be null");
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

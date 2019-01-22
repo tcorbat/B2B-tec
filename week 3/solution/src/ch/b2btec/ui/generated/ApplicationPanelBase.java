@@ -9,13 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-import ch.b2btec.bl.OrderManagement;
-import ch.b2btec.bl.domain.Customer;
 
-public class ApplicationPanelBase extends JPanel {
+public class ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> extends JPanel {
 	private static final long serialVersionUID = -7443063218232359943L;
 
-	public ApplicationPanelBase(Customer customer, OrderManagement orderManagement) {
+	public ApplicationPanelBase(Customer customer, OrderManagement orderManagement, CatalogManagement catalogManagement) {
 		setLayout(new BorderLayout(5, 5));
 
 		JPanel overview = createOverviewPanel(customer, orderManagement);
@@ -25,7 +23,7 @@ public class ApplicationPanelBase extends JPanel {
 		tabbedPane.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		add(tabbedPane);
 
-		JPanel shopTab = createShopTab();
+		JPanel shopTab = createShopTab(catalogManagement);
 		tabbedPane.addTab("Shop", null, shopTab, null);
 
 		JPanel ordersTab = createOrdersTab(customer, orderManagement);
@@ -39,14 +37,14 @@ public class ApplicationPanelBase extends JPanel {
 	}
 
 	public ApplicationPanelBase() {
-		this(null, null);
+		this(null, null, null);
 	}
 
 	protected JPanel createOverviewPanel(Customer customer, OrderManagement orderManagement) {
 		return new JPanel();
 	}
 
-	protected JPanel createShopTab() {
+	protected JPanel createShopTab(CatalogManagement catalogManagement) {
 		return new JPanel();
 	}
 

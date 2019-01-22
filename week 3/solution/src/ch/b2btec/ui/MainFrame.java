@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import ch.b2btec.ApplicationContext;
-import ch.b2btec.bl.OrderManagementService;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.ui.models.LoginModel;
 
@@ -17,11 +16,14 @@ public class MainFrame extends JFrame {
 	private final LoginPanel loginPanel;
 	private ApplicationPanel shopPanel;
 
+	private ApplicationContext context;
+
 	/**
 	 * Create the frame.
 	 * @param context 
 	 */
 	public MainFrame(ApplicationContext context) {
+		this.context = context;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setTitle("B2B-tec");
@@ -45,7 +47,7 @@ public class MainFrame extends JFrame {
 
 	public void showShopPanel(Customer customer) {
 		hideLoginScreen();
-		shopPanel = new ApplicationPanel(customer, new OrderManagementService());
+		shopPanel = new ApplicationPanel(customer, context.getOrderManagement(), context.getCatalogManagement());
 		setBounds(getX(), getY(), 1024, 768);
 		setContentPane(shopPanel);
 	}

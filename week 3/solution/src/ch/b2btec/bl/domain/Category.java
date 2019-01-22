@@ -40,4 +40,9 @@ public class Category {
 			throw new IllegalArgumentException("Category name cannot be null or just blanks");
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

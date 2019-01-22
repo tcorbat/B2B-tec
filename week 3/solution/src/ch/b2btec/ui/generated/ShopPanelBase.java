@@ -11,10 +11,14 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.border.TitledBorder;
 
-public class ShopPanelBase<E> extends JPanel {
+public class ShopPanelBase<Product, CatalogManagement> extends JPanel {
 	private static final long serialVersionUID = 8233584153319109341L;
 
 	public ShopPanelBase() {
+		this(null);
+	}
+	
+	public ShopPanelBase(CatalogManagement catalogManagement) {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 75, 250 };
 		gridBagLayout.rowHeights = new int[] { 200, 100 };
@@ -37,7 +41,7 @@ public class ShopPanelBase<E> extends JPanel {
 		gbl_productsPanel.rowWeights = new double[] { 0.0, Double.MIN_VALUE };
 		productsPanel.setLayout(gbl_productsPanel);
 
-		JList<E> list = new JList<>();
+		JList<Product> list = new JList<>();
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.anchor = GridBagConstraints.NORTHWEST;
 		gbc_list.gridx = 1;
@@ -66,7 +70,11 @@ public class ShopPanelBase<E> extends JPanel {
 		treePanel.setLayout(new GridLayout(0, 1, 0, 0));
 
 		JTree categoryTree = new JTree();
+		configureCategoryTree(categoryTree, catalogManagement);
 		treePanel.add(categoryTree);
+	}
+
+	protected void configureCategoryTree(JTree categoryTree, CatalogManagement catalogManagement) {
 	}
 
 	protected JPanel createDetailsPanel() {
