@@ -8,11 +8,11 @@ import javax.swing.border.TitledBorder;
 
 import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Customer;
-import ch.b2btec.ui.generated.ShopPanelBase;
+import ch.b2btec.ui.generated.ApplicationPanelBase;
 import ch.b2btec.ui.models.AddressModel;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
-public class ApplicationPanel extends ShopPanelBase {
+public class ApplicationPanel extends ApplicationPanelBase {
 	private static final long serialVersionUID = 1547788347753286322L;
 
 	public ApplicationPanel(Customer customer, OrderManagement orderManagement) {
@@ -21,7 +21,7 @@ public class ApplicationPanel extends ShopPanelBase {
 
 	@Override
 	protected JPanel createShopTab() {
-		return new CatalogPanel();
+		return new ShopPanel();
 	}
 
 	@Override
