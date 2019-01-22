@@ -32,7 +32,9 @@ public class ShopPanel extends ShopPanelBase {
 	@Override
 	protected JPanel createOverviewPanel(Customer customer, OrderManagement orderManagement) {
 		var orders = orderManagement.getOrders(customer);
-		return new ShoppingCartSummaryPanel(new ShoppingCartModel(orders.get(0).getCart()));
+		var shoppingCartSummary = new ShoppingCartSummaryPanel(new ShoppingCartModel(orders.get(0).getCart()));
+		shoppingCartSummary.setBorder(new TitledBorder("Shopping Cart Summary"));
+		return shoppingCartSummary;
 	}
 
 	@Override

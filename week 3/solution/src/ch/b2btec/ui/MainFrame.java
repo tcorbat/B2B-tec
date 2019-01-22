@@ -24,10 +24,12 @@ public class MainFrame extends JFrame {
 	public MainFrame(ApplicationContext context) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		setTitle("B2B-tec");
 		LoginModel loginModel = new LoginModel(context.getUserManagement(),
-				(customer) ->
-				// JOptionPane.showMessageDialog(this, "Login successful " + customer.getName())
-				showShopPanel(customer));
+				(customer) -> {
+					setTitle("B2B-tec - User: " + customer.getName());
+					showShopPanel(customer);
+				});
 		loginPanel = new LoginPanel(loginModel);
 		contentPane = loginPanel;
 		setContentPane(contentPane);

@@ -25,9 +25,14 @@ public class Shop {
 	 */
 	void run(String[] args) {
 		// create application and window specific instances
-		context = new ApplicationContext(args);
-		MainFrame mainWindow = new MainFrame(context);
-		controller = new MainController(mainWindow, context);
-		controller.show();
+		try {
+			context = new ApplicationContext(args);
+			MainFrame mainWindow = new MainFrame(context);
+			controller = new MainController(mainWindow, context);
+			controller.show();
+		} catch (Exception e) {
+			System.err.println("B2B-tec could not start:");
+			e.printStackTrace();
+		}
 	}
 }

@@ -1,6 +1,11 @@
 package ch.b2btec;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import ch.b2btec.bl.BusinessContext;
+import ch.b2btec.bl.CatalogManagement;
+import ch.b2btec.bl.CatalogManagementService;
 import ch.b2btec.bl.UserManagement;
 import ch.b2btec.bl.UserManagementService;
 
@@ -12,6 +17,8 @@ import ch.b2btec.bl.UserManagementService;
  *
  */
 public class ApplicationContext {
+	private final CatalogManagementService catalogManagement;
+	private final UserManagementService userManagement;
 	private BusinessContext dataCtx;
 	private String[] params;
 	
@@ -19,9 +26,13 @@ public class ApplicationContext {
 	 * Creates the application context instance. 
 	 * 
 	 * @param params Console line arguments to be stored.
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
-	ApplicationContext(String[] params) {
+	ApplicationContext(String[] params) throws FileNotFoundException, IOException {
 		this.params = params;
+		catalogManagement = new CatalogManagementService("catalog.json");
+		userManagement = new UserManagementService();
 	}
 	
 	/**
@@ -45,6 +56,10 @@ public class ApplicationContext {
 	}
 
 	public UserManagement getUserManagement() {
-		return new UserManagementService();
+		return userManagement;
+	}
+	
+	public CatalogManagement getCatalogManagement() {
+		return catalogManagement;
 	}
 }
