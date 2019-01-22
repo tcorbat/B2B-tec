@@ -1,10 +1,10 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_DESCRIPTION;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PRICE;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PRODUCT_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PRODUCT_NUMBER;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_SPECIFICATION;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_DESCRIPTION;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PRICE;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PRODUCT_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PRODUCT_NUMBER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_SPECIFICATION;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

@@ -1,8 +1,8 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_BILLING_ADDRESS;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CREDENTIALS;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_DELIVERY_ADDRESS;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_BILLING_ADDRESS;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CREDENTIALS;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_DELIVERY_ADDRESS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;

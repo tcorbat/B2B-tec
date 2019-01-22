@@ -1,7 +1,7 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CUSTOMER;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_ORDER_NUMBER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CUSTOMER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_ORDER_NUMBER;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;

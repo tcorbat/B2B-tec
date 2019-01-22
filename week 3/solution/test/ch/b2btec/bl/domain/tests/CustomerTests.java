@@ -1,8 +1,8 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_BUSINESS_NUMBER;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CUSTOMER_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PROFILE;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_BUSINESS_NUMBER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CUSTOMER_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PROFILE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

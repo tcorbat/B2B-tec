@@ -1,4 +1,4 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

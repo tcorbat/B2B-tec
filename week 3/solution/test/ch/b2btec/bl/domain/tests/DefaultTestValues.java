@@ -1,4 +1,4 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
 import ch.b2btec.bl.domain.Address;
 import ch.b2btec.bl.domain.Credentials;

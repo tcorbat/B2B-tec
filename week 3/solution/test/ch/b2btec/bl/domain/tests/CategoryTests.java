@@ -1,6 +1,6 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CATEGORY_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CATEGORY_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
