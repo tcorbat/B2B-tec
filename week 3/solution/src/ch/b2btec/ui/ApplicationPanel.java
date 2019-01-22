@@ -12,10 +12,10 @@ import ch.b2btec.ui.generated.ShopPanelBase;
 import ch.b2btec.ui.models.AddressModel;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
-public class ShopPanel extends ShopPanelBase {
+public class ApplicationPanel extends ShopPanelBase {
 	private static final long serialVersionUID = 1547788347753286322L;
 
-	public ShopPanel(Customer customer, OrderManagement orderManagement) {
+	public ApplicationPanel(Customer customer, OrderManagement orderManagement) {
 		super(customer, orderManagement);
 	}
 

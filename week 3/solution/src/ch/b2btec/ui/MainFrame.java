@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
 	private JPanel contentPane;
 
 	private final LoginPanel loginPanel;
-	private ShopPanel shopPanel;
+	private ApplicationPanel shopPanel;
 
 	/**
 	 * Create the frame.
@@ -45,7 +45,7 @@ public class MainFrame extends JFrame {
 
 	public void showShopPanel(Customer customer) {
 		hideLoginScreen();
-		shopPanel = new ShopPanel(customer, new OrderManagementService());
+		shopPanel = new ApplicationPanel(customer, new OrderManagementService());
 		setBounds(getX(), getY(), 1024, 768);
 		setContentPane(shopPanel);
 	}
