@@ -25,8 +25,8 @@ public class ShopPanel extends ShopPanelBase {
 	}
 
 	@Override
-	protected JPanel createOrdersTab() {
-		return new OrdersPanel();
+	protected JPanel createOrdersTab(Customer customer, OrderManagement orderManagement) {
+		return new OrdersPanel(customer, orderManagement);
 	}
 
 	@Override

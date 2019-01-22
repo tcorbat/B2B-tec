@@ -15,7 +15,7 @@ public class OrderManagementService implements OrderManagement {
 	@Override
 	public List<Order> getOrders(Customer customer) {
 		var orders = new ArrayList<Order>();
-		Order order = new Order(customer);
+		Order order = new Order(customer, 1);
 		Product nail = new Product(1, "Nail", 1, "Hammered", "2mm");
 		ShoppingCart cart = order.getCart();
 		IntStream.range(1, 5).forEach(i -> cart.addProduct(nail));

@@ -1,5 +1,6 @@
 package ch.b2btec.ui.generated;
-
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -7,11 +8,24 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class OrdersPanelBase<E> extends JPanel {
+
+	private static final long serialVersionUID = 2342306099763855259L;
+	protected static final DefaultTableModel DEFAULT_TABLE_MODEL = new DefaultTableModel(new Object[][] {},
+			new String[] { "Name", "Number", "Quantity", "Price Each", "Price Total" });
+	protected JList<E> orderList;
+	protected JLabel orderNumberLabel;
+	protected JLabel orderPriceLabel;
+	protected JLabel orderDateLabel;
+	protected JLabel orderStateLabel;
+	protected JTable orderItemsTable;
+
 	public OrdersPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 150, 0 };
@@ -58,12 +72,13 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_lblOrderNumber.gridy = 0;
 		orderDetailsHeader.add(lblOrderNumber, gbc_lblOrderNumber);
 
-		JLabel label = new JLabel("<#>");
+		orderNumberLabel = new JLabel("");
 		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.anchor = GridBagConstraints.WEST;
 		gbc_label.insets = new Insets(5, 5, 5, 5);
 		gbc_label.gridx = 1;
 		gbc_label.gridy = 0;
-		orderDetailsHeader.add(label, gbc_label);
+		orderDetailsHeader.add(orderNumberLabel, gbc_label);
 
 		JLabel lblPrice = new JLabel("Price:");
 		GridBagConstraints gbc_lblPrice = new GridBagConstraints();
@@ -73,12 +88,13 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_lblPrice.gridy = 1;
 		orderDetailsHeader.add(lblPrice, gbc_lblPrice);
 
-		JLabel label_1 = new JLabel("<$>");
+		orderPriceLabel = new JLabel("");
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
+		gbc_label_1.anchor = GridBagConstraints.WEST;
 		gbc_label_1.insets = new Insets(5, 5, 5, 5);
 		gbc_label_1.gridx = 1;
 		gbc_label_1.gridy = 1;
-		orderDetailsHeader.add(label_1, gbc_label_1);
+		orderDetailsHeader.add(orderPriceLabel, gbc_label_1);
 
 		JLabel lblDate = new JLabel("Date:");
 		GridBagConstraints gbc_lblDate = new GridBagConstraints();
@@ -88,12 +104,13 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_lblDate.gridy = 2;
 		orderDetailsHeader.add(lblDate, gbc_lblDate);
 
-		JLabel label_2 = new JLabel("<DD/MM/YYYY>");
+		orderDateLabel = new JLabel("");
 		GridBagConstraints gbc_label_2 = new GridBagConstraints();
+		gbc_label_2.anchor = GridBagConstraints.WEST;
 		gbc_label_2.insets = new Insets(5, 5, 5, 5);
 		gbc_label_2.gridx = 1;
 		gbc_label_2.gridy = 2;
-		orderDetailsHeader.add(label_2, gbc_label_2);
+		orderDetailsHeader.add(orderDateLabel, gbc_label_2);
 
 		JLabel lblState = new JLabel("State:");
 		GridBagConstraints gbc_lblState = new GridBagConstraints();
@@ -103,37 +120,30 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_lblState.gridy = 3;
 		orderDetailsHeader.add(lblState, gbc_lblState);
 
-		JLabel label_3 = new JLabel("<NEW>");
+		orderStateLabel = new JLabel("");
 		GridBagConstraints gbc_label_3 = new GridBagConstraints();
+		gbc_label_3.anchor = GridBagConstraints.WEST;
 		gbc_label_3.insets = new Insets(5, 5, 5, 5);
 		gbc_label_3.gridx = 1;
 		gbc_label_3.gridy = 3;
-		orderDetailsHeader.add(label_3, gbc_label_3);
+		orderDetailsHeader.add(orderStateLabel, gbc_label_3);
 
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Products", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(5, 5, 5, 5);
-		gbc_panel_1.fill = GridBagConstraints.BOTH;
-		gbc_panel_1.gridx = 0;
-		gbc_panel_1.gridy = 1;
-		orderDetailsPanel.add(panel_1, gbc_panel_1);
-		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[] { 0 };
-		gbl_panel_1.rowHeights = new int[] { 0 };
-		gbl_panel_1.columnWeights = new double[] { 1.0 };
-		gbl_panel_1.rowWeights = new double[] { 1.0 };
-		panel_1.setLayout(gbl_panel_1);
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Shopping Cart",
+				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.insets = new Insets(5, 5, 5, 5);
+		gbc_panel.fill = GridBagConstraints.BOTH;
+		gbc_panel.gridx = 0;
+		gbc_panel.gridy = 1;
+		orderDetailsPanel.add(panel, gbc_panel);
+		panel.setLayout(new BorderLayout(0, 0));
 
 		orderItemsTable = new JTable();
-		orderItemsTable.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { "Name", "Number", "Quantity", "Price Each", "Price Total" }));
-		GridBagConstraints gbc_orderItemsTable = new GridBagConstraints();
-		gbc_orderItemsTable.gridx = 0;
-		gbc_orderItemsTable.gridy = 0;
-		panel_1.add(orderItemsTable, gbc_orderItemsTable);
-		orderItemsTable
-				.setBorder(new TitledBorder(null, "Products", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		JScrollPane scrollPane = new JScrollPane(orderItemsTable);
+		orderItemsTable.setFillsViewportHeight(true);
+		panel.add(scrollPane);
+
 
 		JPanel orders = new JPanel();
 		orders.setBorder(new TitledBorder(null, "Orders", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -150,15 +160,11 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbl_orders.rowWeights = new double[] { 1.0 };
 		orders.setLayout(gbl_orders);
 
-		JList<E> list = new JList<>();
+		orderList = new JList<>();
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.fill = GridBagConstraints.BOTH;
 		gbc_list.gridx = 0;
 		gbc_list.gridy = 0;
-		orders.add(list, gbc_list);
+		orders.add(orderList, gbc_list);
 	}
-
-	private static final long serialVersionUID = 2342306099763855259L;
-	private JTable orderItemsTable;
-
 }

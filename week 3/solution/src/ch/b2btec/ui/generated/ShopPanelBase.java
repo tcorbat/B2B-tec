@@ -28,7 +28,7 @@ public class ShopPanelBase extends JPanel {
 		JPanel shopTab = createShopTab();
 		tabbedPane.addTab("Shop", null, shopTab, null);
 
-		JPanel ordersTab = createOrdersTab();
+		JPanel ordersTab = createOrdersTab(customer, orderManagement);
 		tabbedPane.addTab("Orders", null, ordersTab, null);
 
 		JPanel profileTab = createProfileTab(customer);
@@ -50,7 +50,7 @@ public class ShopPanelBase extends JPanel {
 		return new JPanel();
 	}
 
-	protected JPanel createOrdersTab() {
+	protected JPanel createOrdersTab(Customer customer, OrderManagement orderManagement) {
 		return new JPanel();
 	}
 

@@ -14,6 +14,7 @@ public class ShoppingCartModel extends PropertyObservable {
 		this.cart = cart;
 	}
 
+	// Duplication with OrdersPanel
 	public int getTotalPrice() {
 		return cart.getPositions().stream()
 				.mapToInt(position -> position.getQuantity() * position.getProduct().getPrice()).sum();
