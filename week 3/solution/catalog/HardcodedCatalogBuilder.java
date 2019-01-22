@@ -13,12 +13,13 @@ public class HardcodedCatalogBuilder {
 	private static int nextProductNumber = 1;
 	
 	private static Category addCategory(String name) {
-		return addCategory(name, null);
+		var category = new Category(name);
+		return category;
 	}
 	
 	private static Category addCategory(String name, Category parentCategory) {
-		var category = new Category(name, parentCategory);
-		CATALOG.addCategory(category);
+		var category = addCategory(name);
+		parentCategory.addSubCategory(category);
 		return category;
 	}
 	
@@ -27,12 +28,14 @@ public class HardcodedCatalogBuilder {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		var items = addCategory("Items");
-		var containers = addCategory("Containers", items);
+		var containers = addCategory("Containers");
+		CATALOG.addCategory(containers);
 		var mugs = addCategory("Mugs", containers);
 		var bottles = addCategory("Bottles", containers);
-		var crockery = addCategory("Crockery", items);
-		var cutlery = addCategory("Cutlery", items);
+		var crockery = addCategory("Crockery");
+		CATALOG.addCategory(crockery);
+		var cutlery = addCategory("Cutlery");
+		CATALOG.addCategory(cutlery);
 		
 		containers.addProduct(createProduct("Wooden Box", 20, "Holds some items", "30x20x15cm"));
 		

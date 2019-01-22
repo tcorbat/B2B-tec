@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import ch.b2btec.bl.domain.Category;
 import ch.b2btec.bl.domain.Product;
+import ch.b2btec.bl.exceptions.MustNotCreateCategoryCycleException;
 
 class CategoryTests {
 
@@ -41,17 +42,49 @@ class CategoryTests {
 	}
 
 	@Test
-	void testCategoryWithoutParentHasNoParentCategory() {
+	void testSubcategoriesAreInitiallyEmpty() {
 		var category = createEmptyCategory();
-		assertEquals(null, category.getParentCategory());
+		assertTrue(category.getSubCategories().isEmpty());
 	}
-
+	
 	@Test
-	void testParentCategoryIsSetCorrectly() {
-		var parent = new Category("Parent", null);
-		var category = new Category("Sub Category", parent);
-
-		assertEquals(parent, category.getParentCategory());
+	void testSubcategoryIsAdded() {
+		var category = createEmptyCategory();
+		var subCategory = createEmptyCategory();
+		var expectedSubcategories = Arrays.asList(subCategory);
+		category.addSubCategory(subCategory);
+		assertIterableEquals(expectedSubcategories, category.getSubCategories());
+	}
+	
+	@Test
+	void testMultipleSubcategoriesAreAdded() {
+		var parentCategory = createEmptyCategory();
+		var subCategory1 = createEmptyCategory();
+		var subCategory2 = createEmptyCategory();
+		var subCategory3 = createEmptyCategory();
+		var expectedSubcategories = Arrays.asList(subCategory1, subCategory2, subCategory3);
+		parentCategory.addSubCategory(subCategory1);
+		parentCategory.addSubCategory(subCategory2);
+		parentCategory.addSubCategory(subCategory3);
+		assertIterableEquals(expectedSubcategories, parentCategory.getSubCategories());
+	}
+	
+	@Test
+	void testCannotCreateDirectCategoryCycle() {
+		var category1 = createEmptyCategory();
+		var category2 = createEmptyCategory();
+		category1.addSubCategory(category2);
+		assertThrows(MustNotCreateCategoryCycleException.class, () -> category2.addSubCategory(category1));
+	}
+	
+	@Test
+	void testCannotCreateIndirectCategoryCycle() {
+		var category1 = createEmptyCategory();
+		var category2 = createEmptyCategory();
+		var category3 = createEmptyCategory();
+		category1.addSubCategory(category2);
+		category2.addSubCategory(category3);
+		assertThrows(MustNotCreateCategoryCycleException.class, () -> category3.addSubCategory(category1));
 	}
 
 	@Test

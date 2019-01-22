@@ -1,5 +1,6 @@
 package ch.b2btec.bl.domain.tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -23,14 +24,14 @@ class CatalogTests {
 	@Test
 	void testCatalogContainsAddedCategories() {
 		var tools = new Category("Tools");
-		var drills = new Category("Drills", tools);
+		var drills = new Category("Drills");
+		tools.addSubCategory(drills);
 		var paint = new Category("Paint");
 
-		var expected = Arrays.asList(tools, drills, paint);
+		var expected = Arrays.asList(tools, paint);
 
 		var catalog = new Catalog();
 		catalog.addCategory(tools);
-		catalog.addCategory(drills);
 		catalog.addCategory(paint);
 
 		assertIterableEquals(expected, catalog.getCategories());
@@ -49,5 +50,24 @@ class CatalogTests {
 		catalog.addProduct(hammer);
 
 		assertIterableEquals(expected, catalog.getProducts());
+	}
+	
+	@Test
+	void testFindParentCategoryForRootCategory() {
+		var category = new Category("Saws");
+		var catalog = new Catalog();
+		catalog.addCategory(category);
+		assertTrue(catalog.getParentCategory(category).isEmpty());
+	}
+
+	@Test
+	void testParentCategoryIsSetCorrectly() {
+		var parent = new Category("Parent");
+		var category = new Category("Sub Category");
+		parent.addSubCategory(category);
+		var catalog = new Catalog();
+		catalog.addCategory(parent);
+
+		assertEquals(parent, catalog.getParentCategory(category).get());
 	}
 }

@@ -1,5 +1,7 @@
 package ch.b2btec.bl.domain;
 
+import ch.b2btec.bl.exceptions.QuantityMustBePositiveException;
+
 public class OrderPosition {
 	private final Product product;
 	private int quantity;

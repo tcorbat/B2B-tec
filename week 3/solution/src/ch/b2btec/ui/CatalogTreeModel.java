@@ -1,7 +1,7 @@
 package ch.b2btec.ui;
 
+import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -34,16 +34,7 @@ public class CatalogTreeModel implements TreeModel {
 
 	@Override
 	public int getChildCount(Object parent) {
-		Object expectedCategoryParent = (parent == ROOT) ? null : parent;
-		var numberOfChildren = catalog.getCategories().stream()
-				.filter(category -> category.getParentCategory() == expectedCategoryParent)
-				.count();
-		if (parent instanceof Category) {
-			Category category = (Category) parent;
-			numberOfChildren += category.getProducts().size();
-		}
-		assert(numberOfChildren < Integer.MAX_VALUE);
-		return (int)numberOfChildren;
+		return children(parent).size();
 	}
 
 	@Override
@@ -57,14 +48,7 @@ public class CatalogTreeModel implements TreeModel {
 
 	@Override
 	public int getIndexOfChild(Object parent, Object child) {
-		if (parent instanceof Category) {
-			Category category = (Category) parent;
-			category.getProducts().indexOf(child);
-		} else if (parent == ROOT) {
-			var rootCategories = getRootCategories();
-			return rootCategories.indexOf(child);
-		}
-		return -1;
+		return children(parent).indexOf(child);
 	}
 
 	@Override
@@ -75,19 +59,14 @@ public class CatalogTreeModel implements TreeModel {
 	public void removeTreeModelListener(TreeModelListener l) {
 	}
 
-	private List<Category> getRootCategories() {
-		return catalog.getCategories().stream().filter(category -> Objects.nonNull(category.getParentCategory())).collect(Collectors.toList());
-	}
-	
 	private List<Object> children(Object parent) {
 		if (parent == ROOT) {
-			return getRootCategories().stream().collect(Collectors.toList());
+			return catalog.getCategories().stream().collect(Collectors.toList());
 		} else if (parent instanceof Category) {
 			Category parentCategory = (Category) parent;
-			return Stream.concat(catalog.getCategories().stream()
-					.filter(c -> c.getParentCategory() == parentCategory), parentCategory.getProducts().stream())
+			return Stream.concat(parentCategory.getSubCategories().stream(), parentCategory.getProducts().stream())
 					.collect(Collectors.toList());
 		}
-		return null;
+		return Collections.emptyList();
 	}
 }
