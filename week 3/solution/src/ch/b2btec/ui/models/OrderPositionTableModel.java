@@ -1,5 +1,9 @@
 package ch.b2btec.ui.models;
 
+import java.beans.PropertyChangeEvent;
+import java.util.ArrayList;
+
+import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
@@ -14,9 +18,11 @@ public class OrderPositionTableModel implements TableModel {
 			Integer.class, Integer.class };
 
 	private final ShoppingCart cart;
-
+	private final ArrayList<TableModelListener> listeners = new ArrayList<>();
+	
 	public OrderPositionTableModel(ShoppingCart cart) {
 		this.cart = cart;
+		cart.addPropertyChangeListener(this::cartUpdated);
 	}
 
 	@Override
@@ -69,10 +75,16 @@ public class OrderPositionTableModel implements TableModel {
 
 	@Override
 	public void addTableModelListener(TableModelListener l) {
+		listeners.add(l);
 	}
 
 	@Override
 	public void removeTableModelListener(TableModelListener l) {
+		listeners.remove(l);
+	}
+	
+	private void cartUpdated(PropertyChangeEvent event) {
+		listeners.stream().forEach(listener -> listener.tableChanged(new TableModelEvent(this)));
 	}
 
 }

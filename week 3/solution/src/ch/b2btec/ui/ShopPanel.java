@@ -13,6 +13,7 @@ import ch.b2btec.bl.domain.Catalog;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.bl.domain.Product;
 import ch.b2btec.ui.generated.ShopPanelBase;
+import ch.b2btec.ui.models.OrderPositionTableModel;
 import ch.b2btec.ui.models.ShopModel;
 import ch.b2btec.ui.models.ShopModel.Property;
 
@@ -25,6 +26,8 @@ public class ShopPanel extends ShopPanelBase<Customer, Product, OrderManagement,
 		super(customer, orderManagement, catalogManagement);
 		shopModel.addPropertyChangeListener(this::updateState);
 		addToCartButton.addActionListener(this::addToCartClicked);
+		var customersOrders = orderManagement.getOrders(customer);
+		shoppingCartPanel.setTableModel(new OrderPositionTableModel(customersOrders.get(0).getCart()));
 	}
 
 	@Override

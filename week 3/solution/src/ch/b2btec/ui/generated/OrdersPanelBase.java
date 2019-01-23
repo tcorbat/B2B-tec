@@ -7,19 +7,17 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 
 public class OrdersPanelBase<E> extends JPanel {
 
 	private static final long serialVersionUID = 2342306099763855259L;
-	protected static final DefaultTableModel DEFAULT_TABLE_MODEL = new DefaultTableModel(new Object[][] {},
-			new String[] { "Name", "Number", "Quantity", "Price Each", "Price Total" });
+
 	protected JList<E> orderList;
 	protected JLabel orderNumberLabel;
 	protected JLabel orderPriceLabel;
 	protected JLabel orderDateLabel;
 	protected JLabel orderStateLabel;
-	protected JPanel orderItemsPanel;
+	protected OrderItemsPanelBase orderItemsPanel;
 
 	public OrdersPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -154,7 +152,7 @@ public class OrdersPanelBase<E> extends JPanel {
 		orders.add(orderList, gbc_list);
 	}
 	
-	protected JPanel createOrderItemsPanel() {
+	protected OrderItemsPanelBase createOrderItemsPanel() {
 		return new OrderItemsPanelBase();
 	}
 }

@@ -71,7 +71,7 @@ public class OrdersPanel extends OrdersPanelBase<Order> {
 		orderPriceLabel.setText(Integer.toString(getTotalPrice(order.getCart())));
 		orderDateLabel.setText("unknown date");
 		orderStateLabel.setText(order.getState().name());
-		orderItemsTable.setModel(new OrderPositionTableModel(order.getCart()));
+		orderItemsPanel.setTableModel(new OrderPositionTableModel(order.getCart()));
 	}
 
 	private void resetOrderDetails() {
@@ -79,8 +79,8 @@ public class OrdersPanel extends OrdersPanelBase<Order> {
 		orderPriceLabel.setText("");
 		orderDateLabel.setText("");
 		orderStateLabel.setText("");
-		orderItemsTable.setEnabled(false);
-		orderItemsTable.setModel(DEFAULT_TABLE_MODEL);
+		orderItemsPanel.clearTableModel();
+
 	}
 
 	public int getTotalPrice(ShoppingCart cart) {
