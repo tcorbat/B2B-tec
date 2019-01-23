@@ -1,6 +1,4 @@
 package ch.b2btec.ui.generated;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -8,9 +6,6 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,7 +19,7 @@ public class OrdersPanelBase<E> extends JPanel {
 	protected JLabel orderPriceLabel;
 	protected JLabel orderDateLabel;
 	protected JLabel orderStateLabel;
-	protected JTable orderItemsTable;
+	protected JPanel orderItemsPanel;
 
 	public OrdersPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -128,22 +123,13 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_label_3.gridy = 3;
 		orderDetailsHeader.add(orderStateLabel, gbc_label_3);
 
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Shopping Cart",
-				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		orderItemsPanel = createOrderItemsPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(5, 5, 5, 5);
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 1;
-		orderDetailsPanel.add(panel, gbc_panel);
-		panel.setLayout(new BorderLayout(0, 0));
-
-		orderItemsTable = new JTable();
-		JScrollPane scrollPane = new JScrollPane(orderItemsTable);
-		orderItemsTable.setFillsViewportHeight(true);
-		panel.add(scrollPane);
-
+		orderDetailsPanel.add(orderItemsPanel, gbc_panel);
 
 		JPanel orders = new JPanel();
 		orders.setBorder(new TitledBorder(null, "Orders", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -166,5 +152,9 @@ public class OrdersPanelBase<E> extends JPanel {
 		gbc_list.gridx = 0;
 		gbc_list.gridy = 0;
 		orders.add(orderList, gbc_list);
+	}
+	
+	protected JPanel createOrderItemsPanel() {
+		return new OrderItemsPanelBase();
 	}
 }
