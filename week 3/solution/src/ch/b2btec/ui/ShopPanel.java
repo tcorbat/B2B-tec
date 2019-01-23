@@ -23,6 +23,8 @@ public class ShopPanel extends ShopPanelBase<Product, CatalogManagement> {
 	
 	@Override
 	protected void configureCategoryTree(JTree categoryTree, CatalogManagement catalogManagement) {
+		categoryTree.setShowsRootHandles(true);
+		categoryTree.setRootVisible(false);
 		Catalog catalog = catalogManagement.getCatalog();
 		categoryTree.setModel(new CatalogTreeModel(catalog));
 	}
