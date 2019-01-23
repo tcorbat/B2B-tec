@@ -3,7 +3,7 @@ package ch.b2btec.ui.models;
 import ch.b2btec.bl.domain.Product;
 import ch.b2btec.utils.PropertyObservable;
 
-public class ProductPanelModel extends PropertyObservable {
+public class ProductModel extends PropertyObservable {
 
 	public static enum Property {
 		Name, Number, Price, Description, Specification

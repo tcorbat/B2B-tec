@@ -8,12 +8,12 @@ import ch.b2btec.bl.CatalogManagement;
 import ch.b2btec.bl.domain.Catalog;
 import ch.b2btec.bl.domain.Product;
 import ch.b2btec.ui.generated.ShopPanelBase;
-import ch.b2btec.ui.models.ProductPanelModel;
+import ch.b2btec.ui.models.ProductModel;
 
 public class ShopPanel extends ShopPanelBase<Product, CatalogManagement> {
 
 	private static final long serialVersionUID = 1562773625035679136L;
-	private ProductPanelModel productPanelModel;
+	private ProductModel productPanelModel;
 
 	public ShopPanel(CatalogManagement catalogManagement) {
 		super(catalogManagement);
@@ -21,7 +21,7 @@ public class ShopPanel extends ShopPanelBase<Product, CatalogManagement> {
 
 	@Override
 	protected JPanel createDetailsPanel() {
-		productPanelModel = new ProductPanelModel();
+		productPanelModel = new ProductModel();
 		return new ProductPanel(productPanelModel);
 	}
 

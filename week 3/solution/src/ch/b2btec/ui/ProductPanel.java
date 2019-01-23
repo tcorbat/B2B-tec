@@ -3,15 +3,15 @@ package ch.b2btec.ui;
 import java.beans.PropertyChangeEvent;
 
 import ch.b2btec.ui.generated.ProductPanelBase;
-import ch.b2btec.ui.models.ProductPanelModel;
-import ch.b2btec.ui.models.ProductPanelModel.Property;
+import ch.b2btec.ui.models.ProductModel;
+import ch.b2btec.ui.models.ProductModel.Property;
 
 public class ProductPanel extends ProductPanelBase {
 	private static final long serialVersionUID = 7250649779479486522L;
 
-	private final ProductPanelModel productPanelModel;
+	private final ProductModel productPanelModel;
 
-	public ProductPanel(ProductPanelModel productPanelModel) {
+	public ProductPanel(ProductModel productPanelModel) {
 		this.productPanelModel = productPanelModel;
 		productPanelModel.addPropertyChangeListener(this::modelChanged);
 	}
