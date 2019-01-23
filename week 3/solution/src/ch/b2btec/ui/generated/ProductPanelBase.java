@@ -32,7 +32,7 @@ public class ProductPanelBase extends JPanel {
 		gbc_lblProductName.gridy = 0;
 		add(lblProductName, gbc_lblProductName);
 
-		nameLabel = new JLabel("<Name>");
+		nameLabel = new JLabel();
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.anchor = GridBagConstraints.WEST;
 		gbc_label.insets = new Insets(5, 5, 5, 5);
@@ -48,7 +48,7 @@ public class ProductPanelBase extends JPanel {
 		gbc_lblPrice.gridy = 0;
 		add(lblPrice, gbc_lblPrice);
 
-		priceLabel = new JLabel("$");
+		priceLabel = new JLabel();
 		GridBagConstraints gbc_label_2 = new GridBagConstraints();
 		gbc_label_2.insets = new Insets(5, 5, 5, 5);
 		gbc_label_2.gridx = 3;
@@ -63,7 +63,7 @@ public class ProductPanelBase extends JPanel {
 		gbc_lblProductNr.gridy = 0;
 		add(lblProductNr, gbc_lblProductNr);
 
-		numberLabel = new JLabel("#");
+		numberLabel = new JLabel();
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
 		gbc_label_1.insets = new Insets(5, 5, 5, 5);
 		gbc_label_1.gridx = 5;
