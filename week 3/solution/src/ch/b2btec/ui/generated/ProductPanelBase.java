@@ -19,7 +19,7 @@ public class ProductPanelBase extends JPanel {
 
 	public ProductPanelBase() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 75, 0, 0, 0, 0, 50 };
+		gridBagLayout.columnWidths = new int[] { 75, 150, 50, 50, 75, 50 };
 		gridBagLayout.rowHeights = new int[] { 0, 50, 50 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 1.0, 0.0, 1.0, 0.0 };
 		gridBagLayout.rowWeights = new double[] { 0.0, 1.0, 1.0 };
@@ -79,6 +79,7 @@ public class ProductPanelBase extends JPanel {
 		add(lblDescription, gbc_lblDescription);
 
 		descriptionPane = new JTextPane();
+		descriptionPane.setEditable(false);
 		GridBagConstraints gbc_textPane = new GridBagConstraints();
 		gbc_textPane.insets = new Insets(5, 5, 5, 5);
 		gbc_textPane.gridwidth = 5;
@@ -96,6 +97,7 @@ public class ProductPanelBase extends JPanel {
 		add(lblSpecification, gbc_lblSpecification);
 
 		specificationPane = new JTextPane();
+		specificationPane.setEditable(false);
 		GridBagConstraints gbc_textPane_1 = new GridBagConstraints();
 		gbc_textPane_1.gridwidth = 5;
 		gbc_textPane_1.insets = new Insets(5, 5, 5, 5);
