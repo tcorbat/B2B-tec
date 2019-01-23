@@ -12,11 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.border.TitledBorder;
 
-import ch.b2btec.bl.CatalogManagement;
-import ch.b2btec.bl.OrderManagement;
-import ch.b2btec.bl.domain.Customer;
-import ch.b2btec.bl.domain.Product;
-
 public class ShopPanelBase<Customer, Product, OrderManagement, CatalogManagement> extends JPanel {
 	private static final long serialVersionUID = 8233584153319109341L;
 	private final JPanel shoppingCartPanel;
