@@ -1,5 +1,7 @@
 package ch.b2btec.ui;
 
+import java.beans.PropertyChangeEvent;
+
 import ch.b2btec.ui.generated.ShoppingCartSummaryPanelBase;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
@@ -12,12 +14,15 @@ public class ShoppingCartSummaryPanel extends ShoppingCartSummaryPanelBase {
 	public ShoppingCartSummaryPanel(ShoppingCartModel model) {
 		this.model = model;
 		updateValues();
+		model.addPropertyChangeListener(this::modelChanged);
 	}
 
 	private void updateValues() {
 		itemsInCartLabel.setText(Integer.toString(model.getTotalNumberOfItems()));
 		totalPriceLabel.setText(Integer.toString(model.getTotalPrice()));
-		
 	}
 
+	private void modelChanged(PropertyChangeEvent event) {
+		updateValues();
+	}
 }

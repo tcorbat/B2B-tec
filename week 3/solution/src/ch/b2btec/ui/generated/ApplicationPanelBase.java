@@ -23,7 +23,7 @@ public class ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> 
 		tabbedPane.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		add(tabbedPane);
 
-		JPanel shopTab = createShopTab(catalogManagement);
+		JPanel shopTab = createShopTab(customer, orderManagement, catalogManagement);
 		tabbedPane.addTab("Shop", null, shopTab, null);
 
 		JPanel ordersTab = createOrdersTab(customer, orderManagement);
@@ -44,7 +44,7 @@ public class ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> 
 		return new JPanel();
 	}
 
-	protected JPanel createShopTab(CatalogManagement catalogManagement) {
+	protected JPanel createShopTab(Customer customer, OrderManagement orderManagement, CatalogManagement catalogManagement) {
 		return new JPanel();
 	}
 

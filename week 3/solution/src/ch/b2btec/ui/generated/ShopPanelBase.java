@@ -12,15 +12,17 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.border.TitledBorder;
 
-public class ShopPanelBase<Product, CatalogManagement> extends JPanel {
-	private static final long serialVersionUID = 8233584153319109341L;
-	private JPanel shoppingCartPanel;
+import ch.b2btec.bl.CatalogManagement;
+import ch.b2btec.bl.OrderManagement;
+import ch.b2btec.bl.domain.Customer;
+import ch.b2btec.bl.domain.Product;
 
-	public ShopPanelBase() {
-		this(null);
-	}
+public class ShopPanelBase<Customer, Product, OrderManagement, CatalogManagement> extends JPanel {
+	private static final long serialVersionUID = 8233584153319109341L;
+	private final JPanel shoppingCartPanel;
+	protected final JButton addToCartButton;
 	
-	public ShopPanelBase(CatalogManagement catalogManagement) {
+	public ShopPanelBase(Customer customer, OrderManagement orderManagement, CatalogManagement catalogManagement) {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 175, 250 };
 		gridBagLayout.rowHeights = new int[] { 100, 30, 200 };
@@ -28,12 +30,13 @@ public class ShopPanelBase<Product, CatalogManagement> extends JPanel {
 		gridBagLayout.rowWeights = new double[] { 1.0, 0.0 };
 		setLayout(gridBagLayout);
 
-		JButton btnAddToCart = new JButton("Add to Cart");
+		addToCartButton = new JButton("Add to Cart");
+		addToCartButton.setEnabled(false);
 		GridBagConstraints gbc_btnAddToCart = new GridBagConstraints();
 		gbc_btnAddToCart.insets = new Insets(0, 0, 5, 0);
 		gbc_btnAddToCart.gridx = 1;
 		gbc_btnAddToCart.gridy = 1;
-		add(btnAddToCart, gbc_btnAddToCart);
+		add(addToCartButton, gbc_btnAddToCart);
 
 		shoppingCartPanel = new JPanel();
 		shoppingCartPanel
@@ -58,7 +61,7 @@ public class ShopPanelBase<Product, CatalogManagement> extends JPanel {
 		gbc_list.gridy = 0;
 		shoppingCartPanel.add(list, gbc_list);
 
-		JPanel panel = createDetailsPanel();
+		JPanel panel = createDetailsPanel(customer, orderManagement);
 		panel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		panel.setBorder(new TitledBorder(null, "Details", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel = new GridBagConstraints();
@@ -87,7 +90,7 @@ public class ShopPanelBase<Product, CatalogManagement> extends JPanel {
 	protected void configureCategoryTree(JTree categoryTree, CatalogManagement catalogManagement) {
 	}
 
-	protected JPanel createDetailsPanel() {
+	protected JPanel createDetailsPanel(Customer customer, OrderManagement orderManagement) {
 		return new ProductPanelBase();
 	}
 }

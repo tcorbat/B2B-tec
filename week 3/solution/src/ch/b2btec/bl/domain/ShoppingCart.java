@@ -21,7 +21,10 @@ public class ShoppingCart extends PropertyObservable {
 		checkNotNull(product);
 		var position = findPosition(product);
 		if (position.isPresent()) {
-			position.get().incrementQuantity();
+			OrderPosition changedPosition = position.get();
+			changedPosition.incrementQuantity();
+			observable.fireIndexedPropertyChange(Property.POSITIONS.toString(), positions.indexOf(changedPosition), null,
+					changedPosition);
 		} else {
 			var newPosition = new OrderPosition(product, 1);
 			positions.add(newPosition);

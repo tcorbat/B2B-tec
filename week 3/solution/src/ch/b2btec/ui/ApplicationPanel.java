@@ -21,8 +21,8 @@ public class ApplicationPanel extends ApplicationPanelBase<Customer, OrderManage
 	}
 
 	@Override
-	protected JPanel createShopTab(CatalogManagement catalogManagement) {
-		return new ShopPanel(catalogManagement);
+	protected JPanel createShopTab(Customer customer, OrderManagement orderManagement, CatalogManagement catalogManagement) {
+		return new ShopPanel(customer, orderManagement, catalogManagement);
 	}
 
 	@Override

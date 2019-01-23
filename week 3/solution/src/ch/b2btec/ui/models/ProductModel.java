@@ -15,7 +15,7 @@ public class ProductModel extends PropertyObservable {
 	private String description;
 	private String specification;
 
-	public void showProduct(Product product) {
+	public void show(Product product) {
 		setName(product.getName());
 		setPrice(Integer.toString(product.getPrice()));
 		setNumber(Integer.toString(product.getProductNumber()));
