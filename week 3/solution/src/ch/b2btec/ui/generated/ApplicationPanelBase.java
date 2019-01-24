@@ -59,6 +59,7 @@ public class ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> 
 	protected JPanel createBottomPanel() {
 		JPanel bottomPanel = new JPanel();
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.setEnabled(false);
 		bottomPanel.add(btnLogout);
 
 		JButton btnExit = new JButton("Exit");
