@@ -6,9 +6,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
-import ch.b2btec.bl.CatalogManagement;
-import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Customer;
+import ch.b2btec.bl.services.CatalogManagement;
+import ch.b2btec.bl.services.OrderManagement;
 import ch.b2btec.ui.generated.ApplicationPanelBase;
 import ch.b2btec.ui.models.AddressModel;
 import ch.b2btec.ui.models.ShoppingCartModel;

@@ -7,11 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 
-import ch.b2btec.bl.CatalogManagement;
-import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Catalog;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.bl.domain.Product;
+import ch.b2btec.bl.services.CatalogManagement;
+import ch.b2btec.bl.services.OrderManagement;
 import ch.b2btec.ui.generated.ShopPanelBase;
 import ch.b2btec.ui.models.OrderPositionTableModel;
 import ch.b2btec.ui.models.ShopModel;

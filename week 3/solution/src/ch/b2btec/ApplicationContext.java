@@ -4,12 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import ch.b2btec.bl.BusinessContext;
-import ch.b2btec.bl.CatalogManagement;
-import ch.b2btec.bl.CatalogManagementService;
-import ch.b2btec.bl.OrderManagement;
-import ch.b2btec.bl.OrderManagementService;
-import ch.b2btec.bl.UserManagement;
-import ch.b2btec.bl.UserManagementService;
+import ch.b2btec.bl.services.CatalogManagement;
+import ch.b2btec.bl.services.OrderManagement;
+import ch.b2btec.bl.services.UserManagement;
+import ch.b2btec.bl.services.impl.CatalogManagementService;
+import ch.b2btec.bl.services.impl.OrderManagementService;
+import ch.b2btec.bl.services.impl.UserManagementService;
 
 /**
  * Provides the globally needed instances. May be replaced with a
@@ -35,7 +35,7 @@ public class ApplicationContext {
 	ApplicationContext(String[] params) throws FileNotFoundException, IOException {
 		this.params = params;
 		catalogManagement = new CatalogManagementService("catalog.json");
-		userManagement = new UserManagementService();
+		userManagement = UserManagementService.load("users.json");
 		orderManagement = new OrderManagementService();
 	}
 	

@@ -1,4 +1,4 @@
-package ch.b2btec.bl;
+package ch.b2btec.bl.services;
 
 import java.util.Optional;
 

@@ -2,9 +2,9 @@ package ch.b2btec.ui.models;
 
 import java.util.Optional;
 
-import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.bl.domain.Product;
+import ch.b2btec.bl.services.OrderManagement;
 import ch.b2btec.utils.PropertyObservable;
 
 public class ShopModel extends PropertyObservable {

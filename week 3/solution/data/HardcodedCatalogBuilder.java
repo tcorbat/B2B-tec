@@ -1,8 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
-
-import com.google.gson.GsonBuilder;
-
 import ch.b2btec.bl.domain.Catalog;
 import ch.b2btec.bl.domain.Category;
 import ch.b2btec.bl.domain.Product;
@@ -60,15 +55,7 @@ public class HardcodedCatalogBuilder {
 		cutlery.addProduct(createProduct("Teaspoon", 2, "Stirrs tea", "Stainless steel"));
 		cutlery.addProduct(createProduct("Spoon", 3, "Scoops food", "Stainless steel"));
 		
-		var builder = new GsonBuilder();
-		builder.serializeNulls();
-		builder.setPrettyPrinting();
-		var gson = builder.create();
-		System.out.println(gson.toJson(CATALOG));
-		var catalogFile = new File("catalog.json");
-		try (var writer = new FileWriter(catalogFile)) {
-			writer.write(gson.toJson(CATALOG));
-		}
+		new DataWriter("catalog.json").write(CATALOG);
 	}
 
 }

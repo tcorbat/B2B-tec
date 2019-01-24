@@ -5,10 +5,10 @@ import java.util.List;
 import javax.swing.ListModel;
 import javax.swing.event.ListDataListener;
 
-import ch.b2btec.bl.OrderManagement;
 import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.bl.domain.Order;
 import ch.b2btec.bl.domain.ShoppingCart;
+import ch.b2btec.bl.services.OrderManagement;
 import ch.b2btec.ui.generated.OrdersPanelBase;
 import ch.b2btec.ui.models.OrderPositionTableModel;
 

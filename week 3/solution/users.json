@@ -1,0 +1,164 @@
+{
+  "customers": {
+    "al": {
+      "name": "Al Borland",
+      "businessNumber": 555,
+      "profile": {
+        "credentials": {
+          "SALT_SIZE": 20,
+          "salt": [
+            -81,
+            -79,
+            95,
+            -29,
+            17,
+            102,
+            108,
+            59,
+            -84,
+            55,
+            32,
+            -47,
+            113,
+            123,
+            -64,
+            119,
+            -72,
+            -16,
+            48,
+            111
+          ],
+          "loginName": "al",
+          "passwordHash": [
+            51,
+            82,
+            -112,
+            29,
+            85,
+            -86,
+            4,
+            -67,
+            74,
+            -75,
+            39,
+            54,
+            -56,
+            -90,
+            74,
+            -52,
+            -76,
+            -105,
+            53,
+            38,
+            -9,
+            -57,
+            -87,
+            113,
+            56,
+            21,
+            -95,
+            -75,
+            -38,
+            5,
+            18,
+            -108
+          ]
+        },
+        "deliveryAddress": {
+          "streetName": "Toolstreet",
+          "houseNumber": 5,
+          "zipCode": 98765,
+          "city": "Michigan",
+          "country": "USA"
+        },
+        "billingAddress": {
+          "streetName": "Toolstreet",
+          "houseNumber": 5,
+          "zipCode": 98765,
+          "city": "Michigan",
+          "country": "USA"
+        }
+      }
+    },
+    "sam": {
+      "name": "Samwise Gamgee",
+      "businessNumber": 99,
+      "profile": {
+        "credentials": {
+          "SALT_SIZE": 20,
+          "salt": [
+            -35,
+            69,
+            -96,
+            -29,
+            49,
+            38,
+            -44,
+            69,
+            35,
+            87,
+            -80,
+            -13,
+            89,
+            -102,
+            -34,
+            -89,
+            115,
+            -49,
+            59,
+            41
+          ],
+          "loginName": "sam",
+          "passwordHash": [
+            99,
+            103,
+            -110,
+            -58,
+            80,
+            -18,
+            82,
+            97,
+            -57,
+            75,
+            -47,
+            10,
+            48,
+            -40,
+            12,
+            -6,
+            24,
+            75,
+            -127,
+            -75,
+            -51,
+            67,
+            62,
+            9,
+            -35,
+            22,
+            -1,
+            94,
+            81,
+            -18,
+            -66,
+            -18
+          ]
+        },
+        "deliveryAddress": {
+          "streetName": "Bagshot Row",
+          "houseNumber": 15,
+          "zipCode": 1337,
+          "city": "Hobbiton",
+          "country": "Shire"
+        },
+        "billingAddress": {
+          "streetName": "Bag End",
+          "houseNumber": 3,
+          "zipCode": 1337,
+          "city": "Hobbiton",
+          "country": "Shire"
+        }
+      }
+    }
+  }
+}

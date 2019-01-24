@@ -1,4 +1,4 @@
-package ch.b2btec.bl;
+package ch.b2btec.bl.services.impl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import com.google.gson.GsonBuilder;
 
 import ch.b2btec.bl.domain.Catalog;
+import ch.b2btec.bl.services.CatalogManagement;
 
 public class CatalogManagementService implements CatalogManagement {
 

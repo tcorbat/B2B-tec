@@ -4,8 +4,8 @@ import static ch.b2btec.utils.StringUtils.isNullOrEmpty;
 
 import java.util.function.Consumer;
 
-import ch.b2btec.bl.UserManagement;
 import ch.b2btec.bl.domain.Customer;
+import ch.b2btec.bl.services.UserManagement;
 import ch.b2btec.utils.PropertyObservable;
 
 public class LoginModel extends PropertyObservable {
