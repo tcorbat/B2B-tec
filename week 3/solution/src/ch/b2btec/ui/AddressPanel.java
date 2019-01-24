@@ -58,6 +58,15 @@ public class AddressPanel extends AddressPanelBase implements PropertyChangeList
 		cityField.getDocument().addDocumentListener(inputHandler);
 		countryField.getDocument().addDocumentListener(inputHandler);
 		model.addPropertyChangeListener(this);
+		disableFields();
+	}
+
+	private void disableFields() {
+		streetField.setEditable(false);
+		houseNumberField.setEditable(false);
+		zipCodeField.setEditable(false);
+		cityField.setEditable(false);
+		countryField.setEditable(false);
 	}
 
 	private void updateInput(DocumentEvent event) {
