@@ -12,7 +12,7 @@ pass: flannel
 	* ```ch.b2btec.bl.domain.ShoppingCart.java```
 	* ```ch.b2btec.ui.models.ShoppingCartModel.java```
 	* ```ch.b2btec.ui.models.OrderPositionTableModel.java```
-* Currently, the UI (e.g. the shopping cart overview on top) does not update when the user adds products to the basket. To solve this issue, follow the steps:
+1. Currently, the UI (e.g. the shopping cart overview on top) does not update when the user adds products to the basket. To solve this issue, follow the steps:
 	1. Identify the responsibilities of the involved classes:
 		* Which class represents the Observer, which class has the responsibility of a Subject?
 		> *Caution:* The package names are misleading; UI mediators are called 'Model' in Swing.
@@ -23,7 +23,7 @@ pass: flannel
 	4. Implement the concrete Subject. It stores a list of Observers which can be attached by a public ```attachObserver()``` method. Additionally, the Subject needs a mechanism to ```update()``` all observers, place this feature into a ```notifyObservers()``` method. 
 	5. During the setup phase, all observers need to register themself to the Subject.
 	6. Subjects needs to capture external events and invoke the ```notifyObservers()``` method.
-* After implementing the Observer pattern from scratch, let's replace the self-made classes with the `java.beans` implementation.
+2. After implementing the Observer pattern from scratch, let's replace the self-made classes with the `java.beans` implementation.
 	1. Have a look at the *Observer Pattern in Java* slide.
 	2. Replace your own Observer Pattern implementation with the facilities given by the `java.beans.PropertyChange*` API.
 	3. There are existing facilities within the b2btec shop, which simplifies the usage of `java.beans` implementation. The features are located in the ```ch.b2btec.utils.PropertyObservable``` class.
