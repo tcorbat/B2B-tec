@@ -1,23 +1,16 @@
 package ch.b2btec.bl.models.tests;
 
+import static ch.b2btec.bl.models.tests.TestProductFactory.createTestItem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.beans.PropertyChangeEvent;
 
 import org.junit.jupiter.api.Test;
 
-import ch.b2btec.bl.domain.Product;
 import ch.b2btec.bl.domain.ShoppingCart;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
 class ShoppingCartModelTests {
-	private static int nextTestItemNumber = 1;
-
-	private static Product createTestItem(int price) {
-		var productName = String.format("Test Item {0}", nextTestItemNumber);
-		return new Product(nextTestItemNumber++, productName, price, "", "");
-	}
-
 	@Test
 	void testShoppingCartModelRegistersAsObserverOfShoppingCart() {
 		var cart = new ShoppingCartSpy();
