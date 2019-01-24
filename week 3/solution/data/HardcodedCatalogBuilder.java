@@ -55,7 +55,7 @@ public class HardcodedCatalogBuilder {
 		cutlery.addProduct(createProduct("Teaspoon", 2, "Stirrs tea", "Stainless steel"));
 		cutlery.addProduct(createProduct("Spoon", 3, "Scoops food", "Stainless steel"));
 		
-		new DataWriter("catalog.json").write(CATALOG);
+		new DataWriter("predefined/catalog.json").write(CATALOG);
 	}
 
 }

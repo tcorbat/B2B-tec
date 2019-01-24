@@ -34,8 +34,8 @@ public class ApplicationContext {
 	 */
 	ApplicationContext(String[] params) throws FileNotFoundException, IOException {
 		this.params = params;
-		catalogManagement = new CatalogManagementService("catalog.json");
-		userManagement = UserManagementService.load("users.json");
+		catalogManagement = new CatalogManagementService("predefined/catalog.json");
+		userManagement = UserManagementService.load("predefined/users.json");
 		orderManagement = new OrderManagementService();
 	}
 	

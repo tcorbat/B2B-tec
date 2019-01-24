@@ -68,7 +68,7 @@ public class LoginPanelBase extends JPanel {
 		add(passwordField, gbc_passwordField);
 
 		btnLogin = new JButton("Login");
-		btnLogin.setToolTipText("Possible Logins (Username/Password):   al/flanel   sam/taters");
+		btnLogin.setToolTipText("Possible Logins (Username/Password):   al/flannel   sam/taters");
 		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
 		gbc_btnLogin.insets = new Insets(0, 0, 5, 5);
 		gbc_btnLogin.gridx = 2;

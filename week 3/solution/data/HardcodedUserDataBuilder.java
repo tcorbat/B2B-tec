@@ -13,7 +13,7 @@ public class HardcodedUserDataBuilder {
 		userManagement.addCustomer(createAlBorland());
 		userManagement.addCustomer(createSamwiseGamgee());
 
-		new DataWriter("users.json").write(userManagement);
+		new DataWriter("predefined/users.json").write(userManagement);
 	}
 
 	private static Customer createSamwiseGamgee() {
@@ -27,7 +27,7 @@ public class HardcodedUserDataBuilder {
 
 	private static Customer createAlBorland() {
 		var address = new Address("Toolstreet", 5, 98765, "Michigan", "USA");
-		var credentials = new Credentials("al", "flanel");
+		var credentials = new Credentials("al", "flannel");
 		var profile = new Profile(credentials, address);
 		var customer = new Customer("Al Borland", 555, profile);
 		return customer;
