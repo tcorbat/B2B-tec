@@ -1,8 +1,6 @@
 package ch.b2btec.ui;
 
-import java.awt.GridLayout;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
@@ -10,7 +8,6 @@ import ch.b2btec.bl.domain.Customer;
 import ch.b2btec.bl.services.CatalogManagement;
 import ch.b2btec.bl.services.OrderManagement;
 import ch.b2btec.ui.generated.ApplicationPanelBase;
-import ch.b2btec.ui.models.AddressModel;
 import ch.b2btec.ui.models.ShoppingCartModel;
 
 public class ApplicationPanel extends ApplicationPanelBase<Customer, OrderManagement, CatalogManagement> {
@@ -40,26 +37,6 @@ public class ApplicationPanel extends ApplicationPanelBase<Customer, OrderManage
 
 	@Override
 	protected JPanel createProfileTab(Customer customer) {
-		var profilePanel = new JPanel();
-
-		var detailsPanel = new JPanel();
-		detailsPanel.setBorder(new TitledBorder("User Details"));
-		detailsPanel.setLayout(new GridLayout(2, 2, 5, 5));
-		detailsPanel.add(new JLabel("Customer Name:"));
-		detailsPanel.add(new JLabel(customer.getName()));
-		detailsPanel.add(new JLabel("Business Number:"));
-		detailsPanel.add(new JLabel(Integer.toString(customer.getBusinessNumber())));
-		profilePanel.add(detailsPanel);
-
-		var deliveryAddress = new AddressPanel(new AddressModel(customer.getProfile().getDeliveryAddress()));
-		deliveryAddress.setBorder(new TitledBorder("Delivery Address"));
-		profilePanel.add(deliveryAddress);
-
-		var billingAddress = new AddressPanel(new AddressModel(customer.getProfile().getDeliveryAddress()));
-		billingAddress.setBorder(new TitledBorder("Billing Address"));
-		profilePanel.add(billingAddress);
-
-		return profilePanel;
+		return new ProfileTabPanel(customer);
 	}
-
 }
