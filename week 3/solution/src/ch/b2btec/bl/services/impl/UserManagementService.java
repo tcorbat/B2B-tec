@@ -2,6 +2,7 @@ package ch.b2btec.bl.services.impl;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.Optional;
 import java.util.TreeMap;
 
@@ -20,7 +21,7 @@ public class UserManagementService implements UserManagement {
 	public void addCustomer(Customer newCustomer) {
 		var loginName = newCustomer.getProfile().getCredentials().getLoginName();
 		if (customers.containsKey(loginName)) {
-			throw new IllegalArgumentException(String.format("Customer with username '{0}' already exists", loginName));
+			throw new IllegalArgumentException(new MessageFormat("Customer with username '{0}' already exists").format(loginName));
 		}
 		customers.put(loginName, newCustomer);
 	}
