@@ -91,3 +91,50 @@ Catalog
 - The scaffolding of the class `CatalogPrintVisitor` is already given. Your implementation is only there.
 - Run the `CatalogPrintVisitorTests` to see if your implementation is correct.
 - Start by getting the first test green and the continue with the next failing test.
+
+
+## Value Object Pattern
+A few classes of the *B2B-tec* application have a price property or a method calculating a price. For example each `Product` has a price and the total cost of a shopping cart is a price as well. Currently, such a price is represented by an `int`. This leads to some problems:
+- An `int` does not have a dimension. In the case of a price, the dimension would be the currency. From the `int` type it is not possible to specify the decimal digits that might be required for currencies. The whole implementation requires to feature the same understanding of how the `int` type represents a price.
+
+```Java
+mugs.addProduct(createProduct("Espresso Cup", 15, "Holds a little coffee", "Volume 0.5dl"));
+//How much does the cup actually cost? 15 Cents? 15 Dollars? 15 Euros?
+```
+
+- The `int` can represent negative values, which might be an invalid value for price per se. Subsequently, we need additional logic and tests in the `Product` type to prevent creation of negative priced items.
+
+```Java
+private void checkPrice(int price) {
+  if (price < 0) {
+    throw new IllegalArgumentException("Product price cannot be below zero");
+  }
+}
+```
+
+### Your Task
+- Implement a value type `Price` to represent prices in the *B2B-tec* application
+- A price consists of an `amount` and a `currency`
+- A currency is a value object itself. Fortunately, Java already features `java.util.Currency`, which can be used
+- The scaffolding for the `Price` class is already present in `ch.b2btec.bl.Price`
+- We have prepared test cases for the Price class in `ch.b2btec.bl.tests.PriceTests`
+
+API of `Price`:
+- `Price()`: which should initialize the `amount` with `0` and use *CHF* as currency
+- `Price(long amount)`: which initializes the `amount` to `amount` and uses *CHF* as currency
+- `Price(long amount, Currency currency)`: which initializes the `amount` to `amount` and `currency` to `currency`
+- `Price add(Price other)`: Adds two Prices by creating a new one. `this` and other are not changed.
+- `Price multiply(double factor)`: Multiplies a `Price` by a `factor` by creating a new `Price`. `this` is not changed
+- `String toString()`: Creates a nice `String` for the `Price`. E.g: `"CHF 149.95"`
+- `boolean equals(Other other)`: Returns true if two `Price`s are equal (same `amount` and `currency`)
+- `int hashCode()`: Should be the same for two `Price`s that are also equal. Hash codes are tricky to get correct, as they need to make sure to avoid collisions.
+- Further restriction: A `Price` should never be negative. If a negative `Price` would be created throw an `IllegalArgumentException` instead.
+
+After you have implemented the `Price` type, use it where appropriate in the *B2B-tec* application. This will primarily affect the `Product` class in our Business Domain. You will notice that changing a class in the core of your application the effect will ripple through many other components depending on it:
+- Primarily the tests for the changed type will change
+- The user interface might be affected as well
+
+*Note:* Be aware that if you change `Product` you have to update and rerun the `HardcodedCatalogBuilder`. Otherwise you will get strange exceptions by the JSON parser.
+
+
+
