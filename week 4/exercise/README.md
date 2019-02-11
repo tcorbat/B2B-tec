@@ -46,7 +46,7 @@ public interface CatalogItem {
 }
 ```
 
-You should recognize that this is again the *Composite* pattern. While it is not necessary to have it to apply the *Visitor* it is not uncommon that both appear together.
+The `CatalogItem` and the classes implementing it, form a hierarchical structure, similar to the *Composite* pattern. In this example we deliberately avoided realzing the hierarchy with the *Composite* pattern. While it is not necessary to have it to apply the *Visitor* it is not uncommon that both patterns appear together. 
 
 ![Catalog Classes](images/CatalogClasses.png)
 
@@ -118,6 +118,9 @@ private void checkPrice(int price) {
 - A currency is a value object itself. Fortunately, Java already features `java.util.Currency`, which can be used
 - The scaffolding for the `Price` class is already present in `ch.b2btec.bl.Price`
 - We have prepared test cases for the Price class in `ch.b2btec.bl.tests.PriceTests`
+
+
+![Price Class](images/Price.png)
 
 API of `Price`:
 - `Price()`: which should initialize the `amount` with `0` and use *CHF* as currency
