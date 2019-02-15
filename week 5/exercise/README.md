@@ -1,2 +1,45 @@
-#Week 5 Exercise
+# Week 5 Exercise
+
+In this week's exercicses you will:
+* Assasinate an instance of the singleton pattern
+* Locate and resolve cyclical dependencies among layers
+* Judge and resolve a component by the SOLID principles
+
+## Layer Dependencies
+
+For this exercise we have extended the *B2B-tec* application by an H2 database. This database replaces the hardcoded JSON file for storing customer data. Subsequently, a password change in the *Profile* tab lasts through restarts of the program. With the previous JSON implementation that would require a dump of all user data, even for small modifications like a changed password, the approach featuring a data base is much more flexible. Unfortunately, the programming implementing the `Database` class was careless regarding cyclic dependencies among layers of the application.
+
+### Your Task
+
+Below you see a diagram of few essential classes, structured in packages and split into `Business` and `Storage` layers. The `Business Layer` contains the domain classes as well as the `UserManagementServer`, which provides the functionality to authenticate customers and change passwords. On the other hand the `Storage Layer` provides access to customer data and also is responsible for persisting their credentials. 
+
+1. Draw the dependencies between the classes of the following diagram. You can determine the dependencies by looking at the code in the corresponding classes. When dawing the associations, also draw the direction to show which class known (depends on) which other class.
+
+![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
+
+2. Analyze the dependencies that exist between the `Business` and `Storage` layer. What is the problem with those dependencies?
+
+## Singleton Assasination
+
+In the lecture you have learned about the problems introduced through a singleton. Beside convenience for the initial implementer that `Database` singleton provides no benefit. Furthermore, there is no reason that a restriction to only a single database exists in our application.
+
+### Your Task
+1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency of `UserManagementService` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access to the `Database` singleton to the `ApplicationContext`, which instantiates all services.
+
+
+## Resolving Layer Dependencies
+The mutual dependency between the layers that still exist could be resolved in two ways:
+
+1. Follow the `Layers` pattern by inverting the dependencies incured through the `Database` class using the domain model types `Customer` and `Credentials`. The consequence would be either to move all business domain classes to the storage layer. This would actually flip the dependency. However, the storage layer should not be defining our business model. That is not the responsibility of the `Storage` layer. 
+
+Alternatively, we could offer database record-like types representing the stored information in the database, which make sense to be defined the `Storage` layer, and let the `Business` layer depend on those. You can have a look at the inner class `CustomerTable.CustomerRecord` for an example of how such a record could look like. These records would be tightly coupled to the database scheme and this scheme would be exposed to the `Business` Layer's classes. This is a dependency on a detail we don't want in our software either.
+
+2. Follow the `Ports and Adapters` pattern and move the `DataStorage` interface to the `Business Layer`. In this way we flip the only remaining dependency from the `Business` to the `Storage` layer and invert it.
+
+3. At the moment the `UserManagementService` directly accesses the `Database` class. 
+
+
+
+
+
 
