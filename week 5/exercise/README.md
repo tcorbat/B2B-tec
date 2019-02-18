@@ -24,22 +24,35 @@ Below you see a diagram of few essential classes, structured in packages and spl
 In the lecture you have learned about the problems introduced through a singleton. Beside convenience for the initial implementer that `Database` singleton provides no benefit. Furthermore, there is no reason that a restriction to only a single database exists in our application.
 
 ### Your Task
-1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency of `UserManagementService` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access to the `Database` singleton to the `ApplicationContext`, which instantiates all services.
+1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency of `UserManagementService` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access of the `Database` singleton to the `ApplicationContext`, which instantiates all services.
 
+2. *Simple Factory* 
+
+3. Update the dependencies in the package diagram:
+
+![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
 
 ## Resolving Layer Dependencies
 The mutual dependency between the layers that still exist could be resolved in two ways:
+* Layers Pattern (1)
+* Ports and Adapters Pattern (2)
 
 1. Follow the `Layers` pattern by inverting the dependencies incured through the `Database` class using the domain model types `Customer` and `Credentials`. The consequence would be either to move all business domain classes to the storage layer. This would actually flip the dependency. However, the storage layer should not be defining our business model. That is not the responsibility of the `Storage` layer. 
 
-Alternatively, we could offer database record-like types representing the stored information in the database, which make sense to be defined the `Storage` layer, and let the `Business` layer depend on those. You can have a look at the inner class `CustomerTable.CustomerRecord` for an example of how such a record could look like. These records would be tightly coupled to the database scheme and this scheme would be exposed to the `Business` Layer's classes. This is a dependency on a detail we don't want in our software either.
+Alternatively, we could offer record-like types representing the stored information in the database, which make sense to be defined the `Storage` layer, and let the `Business` layer depend on those. You can have a look at the inner class `CustomerTable.CustomerRecord` for an example of how such a record could look like. These records would be tightly coupled to the database scheme and this scheme would be exposed to the `Business` Layer's classes. This is a dependency on a detail we don't want in our software either.
 
 2. Follow the `Ports and Adapters` pattern and move the `DataStorage` interface to the `Business Layer`. In this way we flip the only remaining dependency from the `Business` to the `Storage` layer and invert it.
 
-3. At the moment the `UserManagementService` directly accesses the `Database` class. 
+### Your Task
+1. Implement the latter solution for *B2B-tec* to resolve the cyclic dependency between *Business Layer* and *Storage Layer*. 
+
+2. Update the dependencies in the package diagram:
+
+![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
 
 
+## Interface Segregation
 
-
-
+1. Which principle is violated?
+2. How can we resolve this?
 
