@@ -3,15 +3,21 @@
 
 ## Layer Dependencies
 
+We cyclic dependencies between the *Business Layer* and the *Storage Layer*. This couples both tightly together and makes exchanging components in the *Storage Layer* difficult.
+
 ![Packages](images/Ex5.1%20Package%20Diagram%20Solution.png)
 
 
 ## Singleton Assasination
 
+The only remaining dependency from the *Business Layer* to the *Storage Layer* comes through the `DataStore` interface that is used by the `UserManagementService`.
+
 ![Packages](images/Ex5.2%20Package%20Diagram%20Solution.png)
 
 
 ## Resolving Layer Dependencies
+
+Now all dependencies are inward regarding the `Business Layer`. Therefore, it does not depend on any other component. It is the core of our hexagon.
 
 ![Packages](images/Ex5.3%20Package%20Diagram%20Solution.png)
 
