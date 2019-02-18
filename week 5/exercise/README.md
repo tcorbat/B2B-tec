@@ -26,11 +26,19 @@ In the lecture you have learned about the problems introduced through a singleto
 ### Your Task
 1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency of `UserManagementService` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access of the `Database` singleton to the `ApplicationContext`, which instantiates all services.
 
-2. *Simple Factory* 
+2. Once the singleton is accessed in the `ApplicationContext` you can remove the singleton completely, by transforming the `Database` back into a *normal* class that features a constructor. In this way you could create multiple instances of the `Database`, but you can still limit the single instance used and provided through the `ApplicationContext`.
 
 3. Update the dependencies in the package diagram:
 
-![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
+![Packages](images/Ex5.2%20Package%20Diagram%20Template.png)
+
+4. *Optional*: If you want you can wrap the creation of the `Database` into a `StoreProvider` class that offers the method `DataStore getDataStore(PersistencyKind)`. The `PersistencyKind` can be an `enum` with values for the possible storage mechanisms:
+
+```java
+public enum PersistencyKind {
+	Database, Json
+}
+```
 
 ## Resolving Layer Dependencies
 The mutual dependency between the layers that still exist could be resolved in two ways:
@@ -48,7 +56,7 @@ Alternatively, we could offer record-like types representing the stored informat
 
 2. Update the dependencies in the package diagram:
 
-![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
+![Packages](images/Ex5.3%20Package%20Diagram%20Template.png)
 
 
 ## Broken Interface
