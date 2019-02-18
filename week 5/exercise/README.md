@@ -51,8 +51,15 @@ Alternatively, we could offer record-like types representing the stored informat
 ![Packages](images/Ex5.1%20Package%20Diagram%20Template.png)
 
 
-## Interface Segregation
+## Broken Interface
 
-1. Which principle is violated?
-2. How can we resolve this?
+Have a look at the `JSONStore` class in the `ch.b2btec.store.json` package. This class is responsible for loading customer data from a *JSON* file. In order to act as a loader for customer data it implements the `DataStore` interface. This interface currently features the following methods:
+* `Collection<Customer> loadCustomers();`
+*	`void writeCredentials(Credentials credentials);`
+*	`void writeCustomer(Customer customer);`
+
+Our implementation of the JSON store can only dump and read a whole `UserManagementService` object at once. Subsequently, it would be really inefficient to provide the `writeCredentials` method, because it would need to write all customer data to fulfill a single password change request. To prevent storing data through the JSON persistency implementation, this part of the interface is not really implemented, but a runtime exception (`UnsupportedOperationException`) is thrown.
+
+1. Which SOLID principle is violated by throwing by not implementing the whole `DataStore` interface?
+2. How can we resolve this, if we don't want to offer the implementation of the `write*` methods?
 
