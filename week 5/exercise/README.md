@@ -46,7 +46,6 @@ The mutual dependency between the layers that still exist could be resolved in t
 * Ports and Adapters Pattern (2)
 
 1. Follow the `Layers` pattern by inverting the dependencies incured through the `Database` class using the domain model types `Customer` and `Credentials`. The consequence would be either to move all business domain classes to the storage layer. This would actually flip the dependency. However, the storage layer should not be defining our business model. That is not the responsibility of the `Storage` layer. 
-
 Alternatively, we could offer record-like types representing the stored information in the database, which make sense to be defined the `Storage` layer, and let the `Business` layer depend on those. You can have a look at the inner class `CustomerTable.CustomerRecord` for an example of how such a record could look like. These records would be tightly coupled to the database scheme and this scheme would be exposed to the `Business` Layer's classes. This is a dependency on a detail we don't want in our software either.
 
 2. Follow the `Ports and Adapters` pattern and move the `DataStorage` interface to the `Business Layer`. In this way we flip the only remaining dependency from the `Business` to the `Storage` layer and invert it.
