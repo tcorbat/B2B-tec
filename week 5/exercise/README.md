@@ -24,7 +24,7 @@ Below you see a diagram of few essential classes, structured in packages and spl
 In the lecture you have learned about the problems introduced through a singleton. Beside convenience for the initial implementer that `Database` singleton provides no benefit. Furthermore, there is no reason that a restriction to only a single database exists in our application.
 
 ### Your Task
-1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency of `UserManagementService` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access of the `Database` singleton to the `ApplicationContext`, which instantiates all services.
+1. In the previous task you should have seen that the `Database` class implements the `DataStore` interface. We could inject the dependency from `UserManagementService` to `DataStore` through its `load()` method by adding a `DataStore` parameter. The `DataStore` interface offers all functionality the `UserManagementService` needs and this would eliminate the direct dependency to `Database`. In this first step you can move the access of the `Database` singleton to the `ApplicationContext`, which instantiates all services.
 
 2. Once the singleton is accessed in the `ApplicationContext` you can remove the singleton completely, by transforming the `Database` back into a *normal* class that features a constructor. In this way you could create multiple instances of the `Database`, but you can still limit the single instance used and provided through the `ApplicationContext`.
 
