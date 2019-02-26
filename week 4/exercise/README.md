@@ -119,6 +119,7 @@ private void checkPrice(int price) {
 - The scaffolding for the `Price` class is already present in `ch.b2btec.bl.Price`
 - We have prepared test cases for the Price class in `ch.b2btec.bl.tests.PriceTests`
 
+***Note:*** The locations to add code are marked by a `TODO: 4.2` comment.
 
 ![Price Class](images/Price.png)
 
@@ -137,7 +138,8 @@ After you have implemented the `Price` type, use it where appropriate in the *B2
 - Primarily the tests for the changed type will change
 - The user interface might be affected as well
 
-*Note:* Be aware that if you change `Product` you have to update and rerun the `HardcodedCatalogBuilder`. Otherwise you will get strange exceptions by the JSON parser.
+***Important:*** Be aware that if you change `Product` you have to update and rerun the `HardcodedCatalogBuilder`. Otherwise you will get strange exceptions by the JSON parser.
+
 
 
 
