@@ -39,12 +39,10 @@ public class OrdersPanel extends OrdersPanelBase<Order> {
 
 		@Override
 		public void addListDataListener(ListDataListener l) {
-			// TODO: Register for changes in the list of orders
 		}
 
 		@Override
 		public void removeListDataListener(ListDataListener l) {
-			// TODO: Unregister for changes in the list of orders
 		}
 	}
 	

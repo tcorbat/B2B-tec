@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import ch.b2btec.bl.Price;
 import ch.b2btec.bl.domain.Product;
 
 class ProductTests {
@@ -81,13 +80,6 @@ class ProductTests {
 		var product = new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, DEFAULT_PRICE, DEFAULT_DESCRIPTION,
 				DEFAULT_SPECIFICATION);
 		assertEquals(DEFAULT_PRICE, product.getPrice());
-	}
-
-	@Test
-	void testPriceCannotBeNegative() {
-		//TODO: Remove test, as it became inappropriate as we already have the guarantee that a price cannot be negative
-		assertThrows(IllegalArgumentException.class, () -> new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, new Price(-1),
-				DEFAULT_DESCRIPTION, DEFAULT_SPECIFICATION));
 	}
 
 	@Test

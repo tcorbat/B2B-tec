@@ -3,45 +3,45 @@ package ch.b2btec.bl;
 import java.util.Currency;
 
 public class Price {
-	//TODO: Add fields for amount and currency, make them final
+	// TODO: 4.3 Add fields for amount and currency, make them final
 	
 	public Price() {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 	}
 
 	public Price(long amount) {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 	}
 
 	public Price(long amount, Currency currency) {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 	}
 
 	public Price add(Price other) {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 		return this;
 	}
 
 	public Price multiply(double factor) {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 		return this;
 	}
 
 	@Override
 	public String toString() {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 		return super.toString();
 	}
 
 	@Override
 	public boolean equals(Object other) {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 		return super.equals(other);
 	}
 
 	@Override
 	public int hashCode() {
-		//TODO: Implement
+		// TODO: 4.3 Implement
 		return super.hashCode();
 	}
 }

@@ -8,39 +8,39 @@ import ch.b2btec.bl.domain.Product;
 
 public class CatalogPrintVisitor implements CatalogItemVisitor {
 
-	//TODO: Implement
+	// TODO: 4.2 Implement
 
 	public CatalogPrintVisitor(PrintStream printStream) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void visit(Catalog catalog) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void leave(Catalog catalog) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void visit(Product product) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void leave(Product product) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void visit(Category category) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 
 	@Override
 	public void leave(Category category) {
-		//TODO: Implement
+		// TODO: 4.2 Implement
 	}
 }
