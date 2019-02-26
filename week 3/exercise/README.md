@@ -33,7 +33,7 @@ pass: flannel
 * Analyze the structure of the following classes:
 	* ```ch.b2btec.bl.domain.ShoppingCart.java```
 	* ```ch.b2btec.ui.models.ShoppingCartModel.java```
-	* ```ch.b2btec.ui.models.ShoppingCartSummaryPanel.java```
+	* ```ch.b2btec.ui.ShoppingCartSummaryPanel.java```
 * Which classes represents the Model, View and Controller responsibility according the M-V-C pattern?
 
 
