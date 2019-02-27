@@ -19,7 +19,7 @@ Below you see a diagram of few essential classes, structured in packages and spl
 
 2. Analyze the dependencies that exist between the `Business` and `Storage` layer. What is the problem with those dependencies?
 
-## Singleton Assasination
+## Singleton Assassination
 
 In the lecture you have learned about the problems introduced through a singleton. Beside convenience for the initial implementer that `Database` singleton provides no benefit. Furthermore, there is no reason that a restriction to only a single database exists in our application.
 
