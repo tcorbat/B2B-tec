@@ -1,9 +1,32 @@
 # Week 5 Exercise
 
 In this week's exercicses you will:
-* Assasinate an instance of the singleton pattern
-* Locate and resolve cyclical dependencies among layers
-* Judge and resolve a component by the SOLID principles
+* Analyze code examples and judge by the SOLID principles
+
+
+## SOLID Principles
+
+We have prepared an example project with five independen cases (package `case 1` to `case 5`), each contains a few classes. Your task is to analyze each case and figure out which SOLID principle is violated. You can find the example project [here](week%205%20Solid%20Violation%20Exercise).
+
+For each example do the following:
+* Read the code and understand its basics. We specify for each case the interesting parts and which parts can be ignored for the purpose of the exercise.
+* Figure out which SOLID principle is violated.
+* Explain how the design can be fixed to be inline with the violated principle
+
+### Case 1: Birds
+
+### Case 2: Trips
+
+### Case 3: Signal Emitter
+
+### Case 4: Employee
+
+### Case 5: Counter
+
+
+# Optional: Analyzing B2B-tec's Architecture
+
+This exercises is for the eager students, who want to analyze the B2B-tec design and eliminate parts of the flaws incorporated intentionally. 
 
 ## Layer Dependencies
 
