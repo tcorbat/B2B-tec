@@ -14,6 +14,10 @@ For each example do the following:
 * Explain how the design can be fixed to be inline with the violated principle
 
 ### Case 1: Birds
+* `Birds`: This class contains the `main` method, which can be executed to run the program.
+* `Bird`: This interface specifies the methods every `Bird` supports, i.e. `layEgg()` and `fly()`.
+* `Penguin`: A class representing penguins. It implements `Bird`.
+* `Pigeon`: A class representing pigeons. It implements `Bird`.
 
 ### Case 2: Trips
 
