@@ -27,10 +27,32 @@ For each example do the following:
 ### Case 3: Signal Emitter
 * `Application`: This class contains the `main` method, which can be executed to run the program. It uses the `SignalEmitter` to control the frequency it emits the signal.
 * `SignalEmitter`: This class periodically invokes callbacks that can be registered and unregistered. The frequency can be configured and it can be started and stopped from outside. You don't need
+* `SignalMonitor`: This class defines a callback `Runnable`. It is registered at a `SignalEmitter` for periodic notification in `SignalMonitor`'s constructor.
+* `SignalEmitterInterface`: This interface specifies all methods offered by a `SignalEmitter`:
+```java
+void setInterval(int millis);
+void start();
+void stop();
+
+void subscribeForSignal(Runnable callback);
+void unsubscribeFromSignal(Runnable callback);
+```
 
 ### Case 4: Employee
+* `Employee`: This class features functionality used to represent an employee in various scenarios of an application. In order to not bloat the class we left out common properties like `firstName`, `lastName` and `employeeNumber`. However, it offers functionality used by different organizations in the company:
+ * Human resources department: to check the employee's time-sheet every month
+ * Accounting deparment: to get the employee's salary
+ * IT department: to store and load the `Employee` object in the database
+* There is an additional package `case4.infrastructure` which is just present to make the code compile and offer slightly reasonable types on the interface of `Employee`. Ignore this package for the judgment of the principle.
+
 
 ### Case 5: Counter
+This case is an application representing a persistent counter. It is structured into three layers:
+* `case5.gui`: It contains the `CounterDislay` class for visualizing the counter's state. The value is printed to the console, when it is updated.
+* `case5.problemdomain`: It contains the domain model of the application. The `Counter` represents the counter's state and the `CounterManager` offers functionality to load and store the counter.
+* `case5.storage`: It contains the functionality to store the counter object into a file and load the object from that file again.
+Focus on the dependencies among the classes and subsequently the layers for this case. Drawing a class diagram might help to see the interesting aspects.
+
 
 
 # Optional: Analyzing B2B-tec's Architecture
