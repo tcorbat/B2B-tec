@@ -25,6 +25,8 @@ For each example do the following:
 * `Trip`: This class represents a route (reduced to its distance) travelled by a `MeansOfTransport`. It offers the possibility to query the travel duration.
 
 ### Case 3: Signal Emitter
+* `Application`: This class contains the `main` method, which can be executed to run the program. It uses the `SignalEmitter` to control the frequency it emits the signal.
+* `SignalEmitter`: This class periodically invokes callbacks that can be registered and unregistered. The frequency can be configured and it can be started and stopped from outside. You don't need
 
 ### Case 4: Employee
 
