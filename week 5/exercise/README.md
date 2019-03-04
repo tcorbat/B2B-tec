@@ -6,7 +6,7 @@ In this week's exercicses you will:
 
 ## SOLID Principles
 
-We have prepared an example project with five independen cases (package `case 1` to `case 5`), each contains a few classes. Your task is to analyze each case and figure out which SOLID principle is violated. You can find the example project [here](week%205%20Solid%20Violation%20Exercise).
+We have prepared an example project with five independent cases (package `case 1` to `case 5`), each contains a few classes. Your task is to analyze each case and figure out which SOLID principle is violated. You can find the example project [here](week%205%20Solid%20Violation%20Exercise).
 
 For each example do the following:
 * Read the code and understand its basics. We specify for each case the interesting parts and which parts can be ignored for the purpose of the exercise.
@@ -26,7 +26,7 @@ For each example do the following:
 
 ### Case 3: Signal Emitter
 * `Application`: This class contains the `main` method, which can be executed to run the program. It uses the `SignalEmitter` to control the frequency it emits the signal.
-* `SignalEmitter`: This class periodically invokes callbacks that can be registered and unregistered. The frequency can be configured and it can be started and stopped from outside. You don't need
+* `SignalEmitter`: This class periodically invokes callbacks that can be registered and unregistered. The frequency can be configured and it can be started and stopped from outside. You don't need to understand the details of the implementation, to find the violated principle.
 * `SignalMonitor`: This class defines a callback `Runnable`. It is registered at a `SignalEmitter` for periodic notification in `SignalMonitor`'s constructor.
 * `SignalEmitterInterface`: This interface specifies all methods offered by a `SignalEmitter`:
 ```java
