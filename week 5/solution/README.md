@@ -15,6 +15,11 @@ The `SignalEmitterInterface` specifies the whole interface of the `SignalEmitter
 The `Employee` class violates the single responsibility principle. It tries to fulfill multiple tasks and satisfy multiple clients at once. This bears the danger of having a change for one client inadvertedly affect another client.
 
 ### Case 5: Counter
+Class diagram of the initial situation:
+
+
+![Packages](images/Ex5.1%20Case%20DIP%20Violation.png)
+
 The problem domain has dependencies to the user interface and the storage layers. Ideally, the dependencies should go in the opposite direction. Lower level components should depend on higher level components. I.e. the stable core, the business logic, is unlikely to be replaced, while a user interface or a storage component should be easily replaceable. Therefore, those components should depend on the problem domain and not the other way around.
 
 
@@ -28,21 +33,21 @@ Examples for resolving the violations of the SOLID principles are available as a
 
 We cyclic dependencies between the *Business Layer* and the *Storage Layer*. This couples both tightly together and makes exchanging components in the *Storage Layer* difficult.
 
-![Packages](images/Ex5.1%20Package%20Diagram%20Solution.png)
+![Packages](images/Ex5.2.1%20Package%20Diagram%20Solution.png)
 
 
 ### Singleton Assasination
 
 The only remaining dependency from the *Business Layer* to the *Storage Layer* comes through the `DataStore` interface that is used by the `UserManagementService`.
 
-![Packages](images/Ex5.2%20Package%20Diagram%20Solution.png)
+![Packages](images/Ex5.2.2%20Package%20Diagram%20Solution.png)
 
 
 ### Resolving Layer Dependencies
 
 Now all dependencies are inward regarding the `Business Layer`. Therefore, it does not depend on any other component. It is the core of our hexagon.
 
-![Packages](images/Ex5.3%20Package%20Diagram%20Solution.png)
+![Packages](images/Ex5.2.3%20Package%20Diagram%20Solution.png)
 
 
 ### Broken Interface
