@@ -142,7 +142,7 @@ API of `Price`:
 - `Price()`: which should initialize the `amount` with `0` and use *CHF* as currency
 - `Price(long amount)`: which initializes the `amount` to `amount` and uses *CHF* as currency
 - `Price(long amount, Currency currency)`: which initializes the `amount` to `amount` and `currency` to `currency`
-- `Price add(Price other)`: Adds two Prices by creating a new one. `this` and other are not changed.
+- `Price add(Price other)`: Adds two Prices by creating a new one. `this` and other are not changed. Only `Price`s of the same currency can be added, otherwise an `IllegalArgumentException` should be thrown.
 - `Price multiply(double factor)`: Multiplies a `Price` by a `factor` by creating a new `Price`. `this` is not changed
 - `String toString()`: Creates a nice `String` for the `Price`. E.g: `"CHF 149.95"`
 - `boolean equals(Other other)`: Returns true if two `Price`s are equal (same `amount` and `currency`)
