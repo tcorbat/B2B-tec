@@ -149,6 +149,7 @@ API of `Price`:
 - `int hashCode()`: Should be the same for two `Price`s that are also equal. Hash codes are tricky to get correct, as they need to make sure to avoid collisions.
 - Further restriction: A `Price` should never be negative. If a negative `Price` would be created throw an `IllegalArgumentException` instead.
 
+#### In *B2B-tec* only (Optional)
 After you have implemented the `Price` type, use it where appropriate in the *B2B-tec* application. This will primarily affect the `Product` class in our Business Domain. You will notice that changing a class in the core of your application the effect will ripple through many other components depending on it:
 - Primarily the tests for the changed type will change
 - The user interface might be affected as well
