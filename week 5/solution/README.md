@@ -18,6 +18,10 @@ The `Employee` class violates the single responsibility principle. It tries to f
 The problem domain has dependencies to the user interface and the storage layers. Ideally, the dependencies should go in the opposite direction. Lower level components should depend on higher level components. I.e. the stable core, the business logic, is unlikely to be replaced, while a user interface or a storage component should be easily replaceable. Therefore, those components should depend on the problem domain and not the other way around.
 
 
+### Violations Resolved
+Examples for resolving the violations of the SOLID principles are available as an Eclipse project [here](week%205%20Solid%20Violation%20Solution).
+
+
 ## B2B-tec Architecture (Optional)
 
 ### Layer Dependencies
