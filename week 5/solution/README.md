@@ -18,7 +18,7 @@ The `Employee` class violates the single responsibility principle. It tries to f
 Class diagram of the initial situation:
 
 
-![Packages](images/Ex5.1%20Case%20DIP%20Violation.png)
+![Packages](images/Ex5.1%20Case%205%20DIP%20Violation.png)
 
 The problem domain has dependencies to the user interface and the storage layers. Ideally, the dependencies should go in the opposite direction. Lower level components should depend on higher level components. I.e. the stable core, the business logic, is unlikely to be replaced, while a user interface or a storage component should be easily replaceable. Therefore, those components should depend on the problem domain and not the other way around.
 
