@@ -1,2 +1,2 @@
-#Week 6 Exercise Solution
-
+# Week 6 Exercise
+There is a solution project on Moodle.
