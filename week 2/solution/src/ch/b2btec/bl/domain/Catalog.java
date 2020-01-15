@@ -1,26 +1,45 @@
 package ch.b2btec.bl.domain;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Catalog {
-	private final ArrayList<Category> categories = new ArrayList<>();
-	private final ArrayList<Product> products = new ArrayList<>();
+	private static int nextProductNumber = 1;
+	private final Map<String, Category> categories = new TreeMap<>();
+	private final Map<Integer, Product> products = new TreeMap<>();
 
-	public List<Category> getCategories() {
-		return Collections.unmodifiableList(categories);
+	public Collection<Category> getCategories() {
+		return Collections.unmodifiableCollection(categories.values());
 	}
 
 	public void addCategory(Category category) {
-		categories.add(category);
+		categories.put(category.getName(), category);
 	}
 
-	public List<Product> getProducts() {
-		return Collections.unmodifiableList(products);
+	public Collection<Product> getProducts() {
+		return Collections.unmodifiableCollection(products.values());
 	}
 
 	public void addProduct(Product product) {
-		products.add(product);
+		var number = product.getProductNumber();
+		if (products.containsKey(number)) {
+			throw new IllegalArgumentException("Product with number " + number + " already exists");
+		}
+		products.put(product.getProductNumber(), product);
+	}
+
+	public Product createProduct(String name, int price, String description, String specification) {
+		var product = new Product(determineNextFreeProductNumber(), name, price, description, specification);
+		addProduct(product);
+		return product;
+	}
+
+	private int determineNextFreeProductNumber() {
+		while (products.containsKey(nextProductNumber)) {
+			nextProductNumber++;
+		}
+		return nextProductNumber++;
 	}
 }

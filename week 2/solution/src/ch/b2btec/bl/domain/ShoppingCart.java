@@ -22,6 +22,10 @@ public class ShoppingCart {
 		}
 	}
 
+	public int getTotalPrice() {
+		return positions.stream().mapToInt(position -> position.getProduct().getPrice() * position.getQuantity()).sum();
+	}
+
 	private Optional<OrderPosition> findPosition(Product product) {
 		var productNumber = product.getProductNumber();
 		return positions.stream().filter(position -> position.getProduct().getProductNumber() == productNumber)

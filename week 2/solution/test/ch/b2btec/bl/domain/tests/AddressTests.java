@@ -1,10 +1,10 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CITY_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_COUNTRY;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_HOUSE_NUMBER;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_STREET_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_ZIP_CODE;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CITY_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_COUNTRY;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_HOUSE_NUMBER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_STREET_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_ZIP_CODE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

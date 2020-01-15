@@ -1,10 +1,13 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_BUSINESS_NUMBER;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CUSTOMER_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PROFILE;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_BUSINESS_NUMBER;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CUSTOMER_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PROFILE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -62,4 +65,30 @@ class CustomerTests {
 				() -> new Customer(DEFAULT_CUSTOMER_NAME, DEFAULT_BUSINESS_NUMBER, null));
 	}
 
+	@Test
+	void testCustomerGetOrdersIsNotNull() {
+		var customer = createDefaultCustomer();
+		assertNotNull(customer.getOrders());
+	}
+
+	@Test
+	void testCustomerGetOrdersIsEmptyForNewCustomer() {
+		var customer = createDefaultCustomer();
+		var orders = customer.getOrders();
+		assertTrue(orders.isEmpty());
+	}
+
+	@Test
+	void testCustomerCreateOrderReturnsOrder() {
+		var customer = createDefaultCustomer();
+		var order = customer.createOrder();
+		assertNotNull(order);
+	}
+
+	@Test
+	void testCustomerCreateOrderStoresOrder() {
+		var customer = createDefaultCustomer();
+		var order = customer.createOrder();
+		assertSame(order, customer.getOrders().get(0));
+	}
 }

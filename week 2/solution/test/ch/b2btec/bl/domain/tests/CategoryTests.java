@@ -1,6 +1,6 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_CATEGORY_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_CATEGORY_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -62,7 +62,7 @@ class CategoryTests {
 
 	@Test
 	void testCategoryContainsProductAfterAdd() {
-		var screw = new Product(1, "Screw", "Goes round", "4mm");
+		var screw = new Product(1, "Screw", 2, "Goes round", "4mm");
 		var expected = Arrays.asList(screw);
 
 		var category = createEmptyCategory();
@@ -73,9 +73,9 @@ class CategoryTests {
 
 	@Test
 	void testCategoryContainsProductsAfterMultipleAdd() {
-		var screw = new Product(1, "Screw", "Goes round", "4mm");
-		var nail = new Product(2, "Nail", "Hammered", "1mm");
-		var hammer = new Product(3, "Hammer", "Nails", "1kg");
+		var screw = new Product(1, "Screw", 2, "Goes round", "4mm");
+		var nail = new Product(2, "Nail", 1, "Hammered", "1mm");
+		var hammer = new Product(3, "Hammer", 20, "Nails", "1kg");
 		var expected = Arrays.asList(screw, nail, hammer);
 
 		var category = createEmptyCategory();

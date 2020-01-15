@@ -1,7 +1,7 @@
-package ch.b2btec.bl.tests.domain;
+package ch.b2btec.bl.domain.tests;
 
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_LOGIN_NAME;
-import static ch.b2btec.bl.tests.domain.DefaultTestValues.DEFAULT_PASSWORD;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_LOGIN_NAME;
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PASSWORD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
