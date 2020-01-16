@@ -5,7 +5,7 @@
 * Domain Model to Code 
 
 ## Transfer your B2B-tec Domain Model into Java Code. The goal of this exercise is repeating UML Class Diagram and it’s relation to program code.
-Review the most important aspects of UML Class Diagram Syntax, described in Larman Chapter 7 “UML Class Diagrams”.
+Review the most important aspects of UML Class Diagram Syntax.
 
 * Create a new empty Java project with eclipse.
 
