@@ -17,13 +17,13 @@ Review the most important aspects of UML Class Diagram Syntax, described in Larm
 		* (we will learn how to apply other GRASP patterns during the next lession)
 	* Compare your solution with the provided software class diagram.
 	* Write down the code according to your diagram and requirements.
-* Otherwise, you may use the [provided software class diagram](https://moodle.hsr.ch/pluginfile.php/98120/mod_folder/content/0/VL02%20OOD-Domain_Class_Diagram.png?forcedownload=1) and transfer it into code.
+* Otherwise, you may use the [provided software class diagram](hhttps://moodle.hsr.ch/pluginfile.php/142879/mod_folder/content/0/Domain%20Class%20Diagram.png?forcedownload=1) and transfer it into code.
 	* Write down the code according this diagram and requirements.
 * Answer the following questions:
 	* What are the differences between the Domain Model and a software class diagram?
 	* Which part of program code is not visible in the Domain Model?
 * The provided solution also contains Unit Tests to test the logic within our domain. 
-	* A quick guide how to download and work with eclipse and the provided solution is illustrated in the [Practices document on Moodle](https://moodle.hsr.ch/pluginfile.php/98118/mod_folder/content/0/Practices_1.0.pdf?forcedownload=1).
+	* A quick guide how to download and work with eclipse and the provided solution is illustrated in the [Practices document on Moodle](https://moodle.hsr.ch/pluginfile.php/141859/mod_folder/content/0/B2B-tec%20Exercise%20Setup.pdf?forcedownload=1).
 
 
 ## Solution
