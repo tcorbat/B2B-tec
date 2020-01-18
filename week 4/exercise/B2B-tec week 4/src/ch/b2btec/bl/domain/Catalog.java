@@ -1,38 +1,56 @@
 package ch.b2btec.bl.domain;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 
-import ch.b2btec.bl.visitor.CatalogItem;
-import ch.b2btec.bl.visitor.CatalogItemVisitor;
+public class Catalog {
 
-public class Catalog implements CatalogItem {
-	private final ArrayList<Category> categories = new ArrayList<>();
-	private final ArrayList<Product> products = new ArrayList<>();
+	private static int nextProductNumber = 1;
+	private final Map<String, Category> categories = new TreeMap<>();
+	private final Map<Integer, Product> products = new TreeMap<>();
 
-	public List<Category> getCategories() {
-		return Collections.unmodifiableList(categories);
+	public Collection<Category> getCategories() {
+		return Collections.unmodifiableCollection(categories.values());
 	}
 
 	public void addCategory(Category category) {
-		categories.add(category);
+		categories.put(category.getName(), category);
 	}
 
-	public List<Product> getProducts() {
-		return Collections.unmodifiableList(products);
+	public Collection<Product> getProducts() {
+		return Collections.unmodifiableCollection(products.values());
 	}
 
 	public void addProduct(Product product) {
-		products.add(product);
+		var number = product.getProductNumber();
+		if (products.containsKey(number)) {
+			throw new IllegalArgumentException("Product with number " + number + " already exists");
+		}
+		products.put(product.getProductNumber(), product);
 	}
 
+	public Product createProduct(String name, int price, String description, String specification) {
+		var product = new Product(determineNextFreeProductNumber(), name, price, description, specification);
+		addProduct(product);
+		return product;
+	}
+
+	private int determineNextFreeProductNumber() {
+		while (products.containsKey(nextProductNumber)) {
+			nextProductNumber++;
+		}
+		return nextProductNumber++;
+	}
+
+
 	public Optional<Category> getParentCategory(Category category) {
-		return findParentCategory(categories, category);
+		return findParentCategory(categories.values(), category);
 	}
 	
-	private static Optional<Category> findParentCategory(List<Category> potentialParents, Category category) {
+	private static Optional<Category> findParentCategory(Collection<Category> potentialParents, Category category) {
 		Optional<Category> parent = potentialParents.stream().filter(potentialParent -> isDirectChild(potentialParent, category)).findFirst();
 		if (parent.isPresent()) {
 			return parent;
@@ -42,13 +60,5 @@ public class Catalog implements CatalogItem {
 	
 	private static boolean isDirectChild(Category parent, Category child) {
 		return parent.getSubCategories().stream().anyMatch(category -> category == child);
-	}
-
-	@Override
-	public void accept(CatalogItemVisitor visitor) {
-		visitor.visit(this);
-		products.forEach(product -> product.accept(visitor));
-		categories.forEach(category -> category.accept(visitor));
-		visitor.leave(this);
 	}
 }
