@@ -6,7 +6,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.TreeMap;
 
-public class Catalog {
+import ch.b2btec.bl.visitor.CatalogItem;
+import ch.b2btec.bl.visitor.CatalogItemVisitor;
+
+public class Catalog implements CatalogItem {
 
 	private static int nextProductNumber = 1;
 	private final Map<String, Category> categories = new TreeMap<>();
@@ -60,5 +63,13 @@ public class Catalog {
 	
 	private static boolean isDirectChild(Category parent, Category child) {
 		return parent.getSubCategories().stream().anyMatch(category -> category == child);
+	}
+
+	@Override
+	public void accept(CatalogItemVisitor visitor) {
+		visitor.visit(this);
+		products.values().forEach(product -> product.accept(visitor));
+		categories.values().forEach(category -> category.accept(visitor));
+		visitor.leave(this);
 	}
 }
