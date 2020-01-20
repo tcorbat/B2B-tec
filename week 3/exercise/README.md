@@ -1,8 +1,21 @@
 # Week 3 Exercise - Object-Oriented Design
 
 ## Observer Pattern
-* Download the template for Week 3 from github according the [Practices document on Moodle](https://moodle.hsr.ch/pluginfile.php/98118/mod_folder/content/0/Practices_1.0.pdf?forcedownload=1).
-* Open the project for Week 3.
+
+In this exercise you will implement the Observer pattern. You can either solve the standalone excercise, which looks at the pattern in isolation with minimal other code. Or if you want to implement and see the Observer Pattern in a larger application with a real GUI, you can implement it in the B2B-tec example.
+
+### Standalone Exercise
+
+* Download the template for Week 3 from github according the [Exercise setup document on Moodle](https://moodle.hsr.ch/pluginfile.php/141859/mod_folder/content/0/B2B-tec Exercise Setup.pdf?forcedownload=1).
+* Open the project `week 3 Standalone Observer Exercise`.
+* You will find test cases, which currently do not compile, for the behavior of the `UI`, `Model` and `Observer`. Your task is the integration of the classes `ModelObserver` and `ModelObservable` (`infrastructure` package) into the `DomainModel` (`bl` package) and `UserInterface` (`ui` package).
+* There are multipl `TODOs` in the classes you should fulfill.
+* Draw a class diagram to see the dependencies.
+
+
+### B2B-tec Exercise
+* Download the template for Week 3 from github according the [Exercise setup document on Moodle](https://moodle.hsr.ch/pluginfile.php/141859/mod_folder/content/0/B2B-tec Exercise Setup.pdf?forcedownload=1).
+* Open the project for `B2B-tec week 3 exercise`.
 * Execute the application and login with the following credentials.
 ```
 user: al
@@ -29,7 +42,7 @@ pass: flannel
 	3. There are existing facilities within the b2btec shop, which simplifies the usage of `java.beans` implementation. The features are located in the ```ch.b2btec.utils.PropertyObservable``` class.
 
 
-## MVC Pattern
+## MVC Pattern (B2B-tec)
 * Analyze the structure of the following classes:
 	* ```ch.b2btec.bl.domain.ShoppingCart.java```
 	* ```ch.b2btec.ui.models.ShoppingCartModel.java```
@@ -37,7 +50,7 @@ pass: flannel
 * Which classes represents the Model, View and Controller responsibility according the M-V-C pattern?
 
 
-## General Questions
+## General Questions (B2B-tec)
 * The ```UserManagementService``` contains the following code snippet:
 ```
 var loginName = newCustomer.getProfile().getCredentials().getLoginName();
