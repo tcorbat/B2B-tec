@@ -2,7 +2,13 @@
 
 ## Object-Oriented Design
 
-The source code provides a possible soultion how the TODOs could be implemented according the exercises.
+### Standalone Observer
+
+![Class Diagram for Observer](week%203%20Standalone%20Observer%20Solution/Observer%20with%20Layers.png)
+
+### B2B-tec
+
+The source code provides a possible solution how the TODOs could be implemented according the exercises.
 Please import the current folder as a new project into your eclipse environment.
 
 ## MVC Pattern
