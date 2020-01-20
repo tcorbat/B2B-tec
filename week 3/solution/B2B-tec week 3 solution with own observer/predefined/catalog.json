@@ -1,0 +1,162 @@
+{
+  "categories": [
+    {
+      "name": "Containers",
+      "products": [
+        {
+          "productNumber": 1,
+          "name": "Wooden Box",
+          "price": 20,
+          "description": "Holds some items",
+          "specification": "30x20x15cm"
+        }
+      ],
+      "subCategories": [
+        {
+          "name": "Mugs",
+          "products": [
+            {
+              "productNumber": 2,
+              "name": "Espresso Cup",
+              "price": 15,
+              "description": "Holds a little coffee",
+              "specification": "Volume 0.5dl"
+            },
+            {
+              "productNumber": 3,
+              "name": "Small Coffee Mug",
+              "price": 9,
+              "description": "Holds some coffee, or tea",
+              "specification": "Volume 2dl"
+            },
+            {
+              "productNumber": 4,
+              "name": "Medium Coffee Mug",
+              "price": 12,
+              "description": "Holds a little more coffee, or tea",
+              "specification": "Volume 3dl"
+            },
+            {
+              "productNumber": 5,
+              "name": "Large Coffee Mug",
+              "price": 15,
+              "description": "Holds much coffee, or tea",
+              "specification": "Volume 5dl"
+            },
+            {
+              "productNumber": 6,
+              "name": "Huge Coffee Mug",
+              "price": 18,
+              "description": "Holds too much coffee, or tea",
+              "specification": "Volume 7dl"
+            }
+          ],
+          "subCategories": []
+        },
+        {
+          "name": "Bottles",
+          "products": [
+            {
+              "productNumber": 7,
+              "name": "Small Bottle",
+              "price": 5,
+              "description": "Exquisitly designed water bottle",
+              "specification": "Volume 3dl"
+            },
+            {
+              "productNumber": 8,
+              "name": "Medium Bottle",
+              "price": 1,
+              "description": "Profane water bottle",
+              "specification": "Volume 5dl"
+            },
+            {
+              "productNumber": 9,
+              "name": "Large Bottle",
+              "price": 2,
+              "description": "Profane water bottle",
+              "specification": "Volume 1l"
+            },
+            {
+              "productNumber": 10,
+              "name": "Extra Large Bottle",
+              "price": 3,
+              "description": "Profane water bottle",
+              "specification": "Volume 1.5l"
+            },
+            {
+              "productNumber": 11,
+              "name": "Double Extra Large Bottle",
+              "price": 6,
+              "description": "Profane water bottle",
+              "specification": "Volume 2l"
+            }
+          ],
+          "subCategories": []
+        }
+      ]
+    },
+    {
+      "name": "Crockery",
+      "products": [
+        {
+          "productNumber": 12,
+          "name": "Saucer",
+          "price": 8,
+          "description": "Holds a Small Coffe Mug",
+          "specification": "White with blue border, diameter 10cm"
+        },
+        {
+          "productNumber": 13,
+          "name": "Small Plate",
+          "price": 10,
+          "description": "Breakfast plate",
+          "specification": "White with blue border, diameter 18cm"
+        },
+        {
+          "productNumber": 14,
+          "name": "Normal Plate",
+          "price": 12,
+          "description": "Dinner plate",
+          "specification": "White with blue border, diameter 25cm"
+        }
+      ],
+      "subCategories": []
+    },
+    {
+      "name": "Cutlery",
+      "products": [
+        {
+          "productNumber": 15,
+          "name": "Knife",
+          "price": 3,
+          "description": "Cuts food",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 16,
+          "name": "Fork",
+          "price": 3,
+          "description": "Stabs food",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 17,
+          "name": "Teaspoon",
+          "price": 2,
+          "description": "Stirrs tea",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 18,
+          "name": "Spoon",
+          "price": 3,
+          "description": "Scoops food",
+          "specification": "Stainless steel"
+        }
+      ],
+      "subCategories": []
+    }
+  ],
+  "products": []
+}
