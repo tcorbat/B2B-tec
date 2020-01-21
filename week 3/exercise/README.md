@@ -4,9 +4,10 @@
 
 In this exercise you will implement the Observer pattern. You can either solve the standalone excercise, which looks at the pattern in isolation with minimal other code. Or if you want to implement and see the Observer Pattern in a larger application with a real GUI, you can implement it in the B2B-tec example.
 
+Download the template for Week 3 from github according the [Exercise setup document](/documents/B2B-tec%20Exercise%20Setup.pdf).
+
 ### Standalone Exercise
 
-* Download the template for Week 3 from github according the [Exercise setup document on Moodle](https://moodle.hsr.ch/pluginfile.php/141859/mod_folder/content/0/B2B-tec Exercise Setup.pdf?forcedownload=1).
 * Open the project `week 3 Standalone Observer Exercise`.
 * You will find test cases, which currently do not compile, for the behavior of the `UI`, `Model` and `Observer`. Your task is the integration of the classes `ModelObserver` and `ModelObservable` (`infrastructure` package) into the `DomainModel` (`bl` package) and `UserInterface` (`ui` package).
 * There are multipl `TODOs` in the classes you should fulfill.
@@ -14,7 +15,7 @@ In this exercise you will implement the Observer pattern. You can either solve t
 
 
 ### B2B-tec Exercise
-* Download the template for Week 3 from github according the [Exercise setup document on Moodle](https://moodle.hsr.ch/pluginfile.php/141859/mod_folder/content/0/B2B-tec Exercise Setup.pdf?forcedownload=1).
+
 * Open the project for `B2B-tec week 3 exercise`.
 * Execute the application and login with the following credentials.
 ```
