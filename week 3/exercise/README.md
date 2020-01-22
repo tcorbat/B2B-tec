@@ -43,12 +43,16 @@ pass: flannel
 	3. There are existing facilities within the b2btec shop, which simplifies the usage of `java.beans` implementation. The features are located in the ```ch.b2btec.utils.PropertyObservable``` class.
 
 
-## MVC Pattern (B2B-tec)
+## View Architecture Pattern (B2B-tec)
 * Analyze the structure of the following classes:
 	* ```ch.b2btec.bl.domain.ShoppingCart.java```
 	* ```ch.b2btec.ui.models.ShoppingCartModel.java```
 	* ```ch.b2btec.ui.ShoppingCartSummaryPanel.java```
-* Which classes represents the Model, View and Controller responsibility according the M-V-C pattern?
+* Which view design pattern are implemented by the classes above?
+ * Model-View-Controller?
+ * Presentation Model?
+ * Model-View-ViewModel?
+ * Identify the individual components of the pattern?
 
 
 ## General Questions (B2B-tec)
