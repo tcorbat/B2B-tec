@@ -1,13 +1,9 @@
 package ch.b2btec.bl.domain;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
-import ch.b2btec.utils.PropertyObservable;
 
 //TODO: Observer Pattern, step 1.1
 public class ShoppingCart { //TODO: Observer Pattern, step 1.3
@@ -61,6 +57,10 @@ public class ShoppingCart { //TODO: Observer Pattern, step 1.3
 			// --  changed old value: null
 			// --  changed new value: newPosition
 		}
+	}
+
+	public int getTotalPrice() {
+		return positions.stream().mapToInt(position -> position.getProduct().getPrice() * position.getQuantity()).sum();
 	}
 
 	private Optional<OrderPosition> findPosition(Product product) {

@@ -1,5 +1,6 @@
 package ch.b2btec.bl.domain.tests;
 
+import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PRICE;
 import static ch.b2btec.bl.domain.tests.DefaultTestValues.DEFAULT_PRODUCT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -71,4 +72,28 @@ class ShoppingCartTests {
 		assertEquals(1, secondPosition.getQuantity());
 	}
 
+	@Test
+	void testShoppingCartGetTotalPriceIsZero() {
+		var cart = new ShoppingCart();
+		assertEquals(0, cart.getTotalPrice());
+	}
+
+	@Test
+	void testShoppingCartGetTotalForSingleEntry() {
+		var cart = new ShoppingCart();
+		cart.addProduct(DEFAULT_PRODUCT);
+		assertEquals(DEFAULT_PRICE, cart.getTotalPrice());
+	}
+
+	@Test
+	void testShoppingCartGetTotalForMultipleEntries() {
+		var cart = new ShoppingCart();
+		for (int i = 0; i < 10; i++) {
+			cart.addProduct(DEFAULT_PRODUCT);
+		}
+		for (int i = 0; i < 15; i++) {
+			cart.addProduct(new Product(5, "CPU", 399, "Computes incredibly fast", "5 GHz"));
+		}
+		assertEquals(10 * DEFAULT_PRICE + 15 * 399, cart.getTotalPrice());
+	}
 }

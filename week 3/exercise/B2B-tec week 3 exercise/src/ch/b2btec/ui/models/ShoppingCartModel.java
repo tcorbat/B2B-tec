@@ -1,5 +1,6 @@
 package ch.b2btec.ui.models;
 
+import ch.b2btec.bl.domain.OrderPosition;
 import ch.b2btec.bl.domain.ShoppingCart;
 import ch.b2btec.utils.PropertyObservable;
 
@@ -20,12 +21,11 @@ public class ShoppingCartModel extends PropertyObservable { //TODO: Observer Pat
 
 	// Duplication with OrdersPanel
 	public int getTotalPrice() {
-		return cart.getPositions().stream()
-				.mapToInt(position -> position.getQuantity() * position.getProduct().getPrice()).sum();
+		return cart.getTotalPrice();
 	}
 
 	public int getTotalNumberOfItems() {
-		return cart.getPositions().stream().mapToInt(position -> position.getQuantity()).sum();
+		return cart.getPositions().stream().mapToInt(OrderPosition::getQuantity).sum();
 	}
 	
 	private void shoppingCartChanged() {
