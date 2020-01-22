@@ -20,7 +20,7 @@ public class OrderManagementService implements OrderManagement {
 	private void createDummyData(Customer customer) {
 		if (!orders.containsKey(customer)) {
 			var customersOrders = new ArrayList<Order>();
-			Order order = new Order(customer, nextOrderNumber++);
+			Order order = new Order(nextOrderNumber++);
 			Product nail = new Product(1, "Nail", 1, "Hammered", "2mm");
 			ShoppingCart cart = order.getCart();
 			IntStream.range(1, 5).forEach(i -> cart.addProduct(nail));
@@ -39,7 +39,7 @@ public class OrderManagementService implements OrderManagement {
 		}
 		var customersOrders = orders.get(customer);
 		if (customersOrders.isEmpty()) {
-			customersOrders.add(new Order(customer, nextOrderNumber++));
+			customersOrders.add(new Order(nextOrderNumber++));
 		}
 		return Collections.unmodifiableList(customersOrders);
 	}
