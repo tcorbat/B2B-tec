@@ -15,12 +15,11 @@ import ch.b2btec.bl.services.OrderManagement;
 public class OrderManagementService implements OrderManagement {
 
 	private final HashMap<Customer, ArrayList<Order>> orders = new HashMap<>();
-	private static int nextOrderNumber = 1;
+	private int nextOrderNumber = 1;
 
 	private void createDummyData(Customer customer) {
-		if (!orders.containsKey(customer)) {
 			var customersOrders = new ArrayList<Order>();
-			Order order = new Order(nextOrderNumber++);
+			Order order = new Order(getNextOrderNumber());
 			Product nail = new Product(1, "Nail", 1, "Hammered", "2mm");
 			ShoppingCart cart = order.getCart();
 			IntStream.range(1, 5).forEach(i -> cart.addProduct(nail));
@@ -28,20 +27,37 @@ public class OrderManagementService implements OrderManagement {
 			IntStream.range(1, 5).forEach(i -> cart.addProduct(screw));
 			customersOrders.add(order);
 			orders.put(customer, customersOrders);
-		}
 	}
 	
+	private int getNextOrderNumber() {
+		return nextOrderNumber++;
+	}
+
 	@Override
 	public List<Order> getOrders(Customer customer) {
-		createDummyData(customer);
 		if (!orders.containsKey(customer)) {
-			orders.put(customer, new ArrayList<>());
+			createDummyData(customer);
 		}
 		var customersOrders = orders.get(customer);
 		if (customersOrders.isEmpty()) {
-			customersOrders.add(new Order(nextOrderNumber++));
+			customersOrders.add(new Order(getNextOrderNumber()));
 		}
 		return Collections.unmodifiableList(customersOrders);
+	}
+
+	private void storeOrder(Customer customer, Order order) {
+		if (!orders.containsKey(customer)) {
+			createDummyData(customer);
+		}
+		var customersOrders = orders.get(customer);
+		customersOrders.add(order);
+	}
+
+	@Override
+	public Order createOrder(Customer customer) {
+		var order = new Order(getNextOrderNumber());
+		storeOrder(customer, order);
+		return order;
 	}
 
 }

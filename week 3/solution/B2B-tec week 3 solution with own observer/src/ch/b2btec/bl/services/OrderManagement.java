@@ -7,4 +7,6 @@ import ch.b2btec.bl.domain.Order;
 
 public interface OrderManagement {
 	List<Order> getOrders(Customer customer);
+
+	Order createOrder(Customer customer);
 }
