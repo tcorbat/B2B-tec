@@ -1,6 +1,7 @@
 package ch.b2btec.bl.domain.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,11 @@ import ch.b2btec.bl.domain.Order;
 import ch.b2btec.bl.domain.OrderState;
 
 class OrderTests {
+	@Test
+	void testShoppingCartIsNotNull() {
+		var order = new Order();
+		assertNotNull(order.getCart());
+	}
 
 	@Test
 	void testInitialOrderStateIsNew() {
