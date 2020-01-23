@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import bl.DomainModel;
 import infrastructure.ModelObserver;
 
-class ObserverTests {
+class ObserverModelTests {
 
 	private static class ObserverMock implements ModelObserver {
 
