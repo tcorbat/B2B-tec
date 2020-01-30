@@ -83,7 +83,7 @@ class CatalogTests {
 		var dvddrive = new Product(blueray.getProductNumber(), "DVD Drive", 49, "Reads CDs and DVDs", "Speed 40x/16x");
 		assertThrows(IllegalArgumentException.class, () -> catalog.addProduct(dvddrive));
 	}
-	
+
 	@Test
 	void testFindParentCategoryForRootCategory() {
 		var category = new Category("Harddisks");

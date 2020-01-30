@@ -63,8 +63,8 @@ class CatalogPrintVisitorTests {
 		catalog.addCategory(new Category("Paper"));
 		var outputString = runVisitor(catalog);
 		assertEquals("Catalog\n" +
-					 "\tCategory: Writing Materials\n" +
-					 "\tCategory: Paper\n", outputString);
+					 "\tCategory: Paper\n" +
+					 "\tCategory: Writing Materials\n", outputString);
 	}
 	
 	@Test
@@ -84,12 +84,11 @@ class CatalogPrintVisitorTests {
 		var outputString = runVisitor(catalog);
 		assertEquals("Catalog\n" +
 				 	 "\tEraser costs CHF 0.03\n" +
+				 	 "\tCategory: Paper\n" + "\t\tSheet of Paper costs CHF 0.01\n" +
 					 "\tCategory: Writing Materials\n" +
 					 "\t\tPen costs CHF 0.02\n" +
 					 "\t\tPencil costs CHF 0.01\n" +
 					 "\t\tCategory: Brushes\n" +
-					 "\t\t\tFrog Hair Brush costs CHF 0.10\n" +
-					 "\tCategory: Paper\n" +
-					 "\t\tSheet of Paper costs CHF 0.01\n", outputString);
+					 "\t\t\tFrog Hair Brush costs CHF 0.10\n", outputString);
 	}
 }
