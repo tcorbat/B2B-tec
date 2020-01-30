@@ -1,14 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
 
 public class Date implements Comparable<Date> {
 	private final int day;
 	private final Month month;
 	private final int year;
+	private static final Map<Month, Function<Integer, Integer>> daysOfMonth = new HashMap<>();
+
+	static {
+		Function<Integer, Integer> feb = year -> isLeapYear(year) ? 29 : 28;
+		Function<Integer, Integer> thirty = year -> 30;
+		Function<Integer, Integer> thirtyOne = year -> 31;
+		daysOfMonth.put(Month.Jan, thirtyOne);
+		daysOfMonth.put(Month.Feb, feb);
+		daysOfMonth.put(Month.Mar, thirtyOne);
+		daysOfMonth.put(Month.Apr, thirty);
+		daysOfMonth.put(Month.May, thirtyOne);
+		daysOfMonth.put(Month.Jun, thirty);
+		daysOfMonth.put(Month.Jul, thirtyOne);
+		daysOfMonth.put(Month.Aug, thirtyOne);
+		daysOfMonth.put(Month.Sep, thirty);
+		daysOfMonth.put(Month.Oct, thirtyOne);
+		daysOfMonth.put(Month.Nov, thirty);
+		daysOfMonth.put(Month.Dec, thirtyOne);
+	}
 
 	public Date(int day, Month month, int year) {
 		this.day = day;
 		this.month = month;
 		this.year = year;
 		checkDate();
+	}
+
+	private static boolean isLeapYear(Integer year) {
+		if (year % 400 == 0) {
+			return true;
+		}
+		if (year % 100 == 0) {
+			return false;
+		}
+		return year % 4 == 0;
 	}
 
 	private void checkDate() {
@@ -37,7 +69,11 @@ public class Date implements Comparable<Date> {
 	}
 
 	private int nextDay() {
-		return day + 1;
+		return day % daysInMonth() + 1;
+	}
+
+	public int daysInMonth() {
+		return daysOfMonth.get(month).apply(year);
 	}
 
 	@Override
