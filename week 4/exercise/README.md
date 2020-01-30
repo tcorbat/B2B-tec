@@ -131,7 +131,7 @@ private void checkPrice(int price) {
 - A price consists of an `amount` and a `currency`
 - A currency is a value object itself. Fortunately, Java already features `java.util.Currency`, which can be used
 - You can solve this exercise either in the context of a standalone project provided [here](week%204%20Price%20Value%20Type%20Exercise) or directly in the *B2B-tec* project.
-- The scaffolding for the `Price` class is already present either ` or in `ch.b2btec.bl.Price` (*B2B-tec*).
+- The scaffolding for the `Price` class is already present in the default package (standalone project) or `ch.b2btec.bl.Price` (*B2B-tec*).
 - We have prepared test cases for the `Price` class also in the default package (standalone project) or in `ch.b2btec.bl.tests.PriceTests` (*B2B-tec*).
 
 ***Note:*** The locations to add code are marked by a `TODO: 4.2` comment.
