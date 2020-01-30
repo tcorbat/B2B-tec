@@ -1,6 +1,6 @@
 {
-  "categories": [
-    {
+  "categories": {
+    "Containers": {
       "name": "Containers",
       "products": [
         {
@@ -129,7 +129,7 @@
         }
       ]
     },
-    {
+    "Crockery": {
       "name": "Crockery",
       "products": [
         {
@@ -165,7 +165,7 @@
       ],
       "subCategories": []
     },
-    {
+    "Cutlery": {
       "name": "Cutlery",
       "products": [
         {
@@ -211,6 +211,6 @@
       ],
       "subCategories": []
     }
-  ],
-  "products": []
+  },
+  "products": {}
 }
