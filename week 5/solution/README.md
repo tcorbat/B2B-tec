@@ -2,7 +2,7 @@
 
 ## SOLID Principles
 
-### Case 1: Brids
+### Case 1: Birds
 In this case the liskov substitution principle is violated. Even though the interface `Bird` offers the `fly` method, a penguin usually cannot fly. Thus you cannot use `Penguin`s as `Bird`s unconditionally.
 
 ### Case 2: Means of Transport
