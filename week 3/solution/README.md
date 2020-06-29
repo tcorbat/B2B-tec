@@ -14,9 +14,9 @@ Please import the current folder as a new project into your eclipse environment.
 ## View Architecture Pattern (B2B-tec)
 * The given classes are designed according to the Presentation Model pattern by Martin Fowler.
 * Analyze the structure of the following classes:
-	* Domain Class: [```ch.b2btec.bl.domain.ShoppingCart.java```](./src/ch/b2btec/bl/domain/ShoppingCart.java)
-	* Presentation Model: [```ch.b2btec.ui.models.ShoppingCartModel.java```](./src/ch/b2btec/ui/models/ShoppingCartModel.java)
-	* View: [```ch.b2btec.ui.ShoppingCartSummaryPanel.java```](./src/ch/b2btec/ui/ShoppingCartSummaryPanel.java)
+	* Domain Class: [```ch.b2btec.bl.domain.ShoppingCart.java```](./B2B-tec%20week%203%20solution/src/ch/b2btec/bl/domain/ShoppingCart.java)
+	* Presentation Model: [```ch.b2btec.ui.models.ShoppingCartModel.java```](./B2B-tec%20week%203%20solution/src/ch/b2btec/ui/models/ShoppingCartModel.java)
+	* View: [```ch.b2btec.ui.ShoppingCartSummaryPanel.java```](./B2B-tec%20week%203%20solution/src/ch/b2btec/ui/ShoppingCartSummaryPanel.java)
 
 ## General Questions
 Which pattern could be used, to reduce the method chain? How would you apply this pattern?
