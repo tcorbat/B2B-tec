@@ -2,4 +2,4 @@
 
 ## Domain Analysis Solutions
 
-See [OOA CRC Cards - Proposal for Solution](https://moodle.hsr.ch/pluginfile.php/98119/mod_folder/content/0/VL01%20OOA-CRC-Cards_Proposal-for-Solution.pdf?forcedownload=1)
+See [OOA CRC Cards - Proposal for Solution](https://moodle.hsr.ch/pluginfile.php/141862/mod_folder/content/0/VL01%20OOA-CRC-Cards%20Solution%20Proposal.pdf)
