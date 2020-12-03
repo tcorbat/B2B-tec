@@ -36,7 +36,7 @@ We cyclic dependencies between the *Business Layer* and the *Storage Layer*. Thi
 ![Packages](images/Ex5.2.1%20Package%20Diagram%20Solution.png)
 
 
-### Singleton Assasination
+### Singleton Assassination
 
 The only remaining dependency from the *Business Layer* to the *Storage Layer* comes through the `DataStore` interface that is used by the `UserManagementService`.
 
