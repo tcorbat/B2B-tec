@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import ch.b2btec.bl.Price;
+
 public class ShoppingCart {
 	private final ArrayList<OrderPosition> positions = new ArrayList<>();
 
@@ -22,8 +24,9 @@ public class ShoppingCart {
 		}
 	}
 
-	public int getTotalPrice() {
-		return positions.stream().mapToInt(position -> position.getProduct().getPrice() * position.getQuantity()).sum();
+	public Price getTotalPrice() {
+		return positions.stream().map(position -> position.getProduct().getPrice().multiply(position.getQuantity()))
+				.reduce((lhs, rhs) -> lhs.add(rhs)).orElse(new Price());
 	}
 
 	private Optional<OrderPosition> findPosition(Product product) {

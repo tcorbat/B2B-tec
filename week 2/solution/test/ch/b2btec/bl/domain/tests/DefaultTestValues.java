@@ -1,5 +1,6 @@
 package ch.b2btec.bl.domain.tests;
 
+import ch.b2btec.bl.Price;
 import ch.b2btec.bl.domain.Address;
 import ch.b2btec.bl.domain.Credentials;
 import ch.b2btec.bl.domain.Customer;
@@ -23,7 +24,7 @@ public class DefaultTestValues {
 	final static Profile DEFAULT_PROFILE = new Profile(DEFAULT_CREDENTIALS, DEFAULT_ADDRESS);
 	final static int DEFAULT_PRODUCT_NUMBER = 123;
 	final static String DEFAULT_PRODUCT_NAME = "Product 123";
-	final static int DEFAULT_PRICE = 50;
+	final static Price DEFAULT_PRICE = new Price(50);
 	final static String DEFAULT_DESCRIPTION = "Description of Product 123";
 	final static String DEFAULT_SPECIFICATION = "Specification of Product 123";
 	final static Product DEFAULT_PRODUCT = new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, DEFAULT_PRICE,

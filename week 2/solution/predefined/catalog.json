@@ -1,0 +1,284 @@
+{
+  "categories": {
+    "Containers": {
+      "name": "Containers",
+      "parentCategory": null,
+      "products": [
+        {
+          "productNumber": 1,
+          "name": "Wooden Box",
+          "price": {
+            "amount": 20,
+            "currency": "CHF"
+          },
+          "description": "Holds some items",
+          "specification": "30x20x15cm"
+        }
+      ]
+    },
+    "Crockery": {
+      "name": "Crockery",
+      "parentCategory": null,
+      "products": [
+        {
+          "productNumber": 12,
+          "name": "Saucer",
+          "price": {
+            "amount": 8,
+            "currency": "CHF"
+          },
+          "description": "Holds a Small Coffe Mug",
+          "specification": "White with blue border, diameter 10cm"
+        },
+        {
+          "productNumber": 13,
+          "name": "Small Plate",
+          "price": {
+            "amount": 10,
+            "currency": "CHF"
+          },
+          "description": "Breakfast plate",
+          "specification": "White with blue border, diameter 18cm"
+        },
+        {
+          "productNumber": 14,
+          "name": "Normal Plate",
+          "price": {
+            "amount": 12,
+            "currency": "CHF"
+          },
+          "description": "Dinner plate",
+          "specification": "White with blue border, diameter 25cm"
+        }
+      ]
+    },
+    "Cutlery": {
+      "name": "Cutlery",
+      "parentCategory": null,
+      "products": [
+        {
+          "productNumber": 15,
+          "name": "Knife",
+          "price": {
+            "amount": 3,
+            "currency": "CHF"
+          },
+          "description": "Cuts food",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 16,
+          "name": "Fork",
+          "price": {
+            "amount": 3,
+            "currency": "CHF"
+          },
+          "description": "Stabs food",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 17,
+          "name": "Teaspoon",
+          "price": {
+            "amount": 2,
+            "currency": "CHF"
+          },
+          "description": "Stirrs tea",
+          "specification": "Stainless steel"
+        },
+        {
+          "productNumber": 18,
+          "name": "Spoon",
+          "price": {
+            "amount": 3,
+            "currency": "CHF"
+          },
+          "description": "Scoops food",
+          "specification": "Stainless steel"
+        }
+      ]
+    }
+  },
+  "products": {
+    "1": {
+      "productNumber": 1,
+      "name": "Wooden Box",
+      "price": {
+        "amount": 20,
+        "currency": "CHF"
+      },
+      "description": "Holds some items",
+      "specification": "30x20x15cm"
+    },
+    "2": {
+      "productNumber": 2,
+      "name": "Espresso Cup",
+      "price": {
+        "amount": 15,
+        "currency": "CHF"
+      },
+      "description": "Holds a little coffee",
+      "specification": "Volume 0.5dl"
+    },
+    "3": {
+      "productNumber": 3,
+      "name": "Small Coffee Mug",
+      "price": {
+        "amount": 9,
+        "currency": "CHF"
+      },
+      "description": "Holds some coffee, or tea",
+      "specification": "Volume 2dl"
+    },
+    "4": {
+      "productNumber": 4,
+      "name": "Medium Coffee Mug",
+      "price": {
+        "amount": 12,
+        "currency": "CHF"
+      },
+      "description": "Holds a little more coffee, or tea",
+      "specification": "Volume 3dl"
+    },
+    "5": {
+      "productNumber": 5,
+      "name": "Large Coffee Mug",
+      "price": {
+        "amount": 15,
+        "currency": "CHF"
+      },
+      "description": "Holds much coffee, or tea",
+      "specification": "Volume 5dl"
+    },
+    "6": {
+      "productNumber": 6,
+      "name": "Huge Coffee Mug",
+      "price": {
+        "amount": 18,
+        "currency": "CHF"
+      },
+      "description": "Holds too much coffee, or tea",
+      "specification": "Volume 7dl"
+    },
+    "7": {
+      "productNumber": 7,
+      "name": "Small Bottle",
+      "price": {
+        "amount": 5,
+        "currency": "CHF"
+      },
+      "description": "Exquisitly designed water bottle",
+      "specification": "Volume 3dl"
+    },
+    "8": {
+      "productNumber": 8,
+      "name": "Medium Bottle",
+      "price": {
+        "amount": 1,
+        "currency": "CHF"
+      },
+      "description": "Profane water bottle",
+      "specification": "Volume 5dl"
+    },
+    "9": {
+      "productNumber": 9,
+      "name": "Large Bottle",
+      "price": {
+        "amount": 2,
+        "currency": "CHF"
+      },
+      "description": "Profane water bottle",
+      "specification": "Volume 1l"
+    },
+    "10": {
+      "productNumber": 10,
+      "name": "Extra Large Bottle",
+      "price": {
+        "amount": 3,
+        "currency": "CHF"
+      },
+      "description": "Profane water bottle",
+      "specification": "Volume 1.5l"
+    },
+    "11": {
+      "productNumber": 11,
+      "name": "Double Extra Large Bottle",
+      "price": {
+        "amount": 6,
+        "currency": "CHF"
+      },
+      "description": "Profane water bottle",
+      "specification": "Volume 2l"
+    },
+    "12": {
+      "productNumber": 12,
+      "name": "Saucer",
+      "price": {
+        "amount": 8,
+        "currency": "CHF"
+      },
+      "description": "Holds a Small Coffe Mug",
+      "specification": "White with blue border, diameter 10cm"
+    },
+    "13": {
+      "productNumber": 13,
+      "name": "Small Plate",
+      "price": {
+        "amount": 10,
+        "currency": "CHF"
+      },
+      "description": "Breakfast plate",
+      "specification": "White with blue border, diameter 18cm"
+    },
+    "14": {
+      "productNumber": 14,
+      "name": "Normal Plate",
+      "price": {
+        "amount": 12,
+        "currency": "CHF"
+      },
+      "description": "Dinner plate",
+      "specification": "White with blue border, diameter 25cm"
+    },
+    "15": {
+      "productNumber": 15,
+      "name": "Knife",
+      "price": {
+        "amount": 3,
+        "currency": "CHF"
+      },
+      "description": "Cuts food",
+      "specification": "Stainless steel"
+    },
+    "16": {
+      "productNumber": 16,
+      "name": "Fork",
+      "price": {
+        "amount": 3,
+        "currency": "CHF"
+      },
+      "description": "Stabs food",
+      "specification": "Stainless steel"
+    },
+    "17": {
+      "productNumber": 17,
+      "name": "Teaspoon",
+      "price": {
+        "amount": 2,
+        "currency": "CHF"
+      },
+      "description": "Stirrs tea",
+      "specification": "Stainless steel"
+    },
+    "18": {
+      "productNumber": 18,
+      "name": "Spoon",
+      "price": {
+        "amount": 3,
+        "currency": "CHF"
+      },
+      "description": "Scoops food",
+      "specification": "Stainless steel"
+    }
+  }
+}

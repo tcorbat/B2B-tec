@@ -83,12 +83,6 @@ class ProductTests {
 	}
 
 	@Test
-	void testPriceCannotBeNegative() {
-		assertThrows(IllegalArgumentException.class, () -> new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, -1,
-				DEFAULT_DESCRIPTION, DEFAULT_SPECIFICATION));
-	}
-
-	@Test
 	void testDescriptionCannotBeNull() {
 		assertThrows(IllegalArgumentException.class,
 				() -> new Product(DEFAULT_PRODUCT_NUMBER, DEFAULT_PRODUCT_NAME, DEFAULT_PRICE, null,
