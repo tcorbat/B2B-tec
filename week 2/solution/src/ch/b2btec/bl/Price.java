@@ -1,6 +1,7 @@
 package ch.b2btec.bl;
 
 import java.util.Currency;
+import java.util.Objects;
 
 public class Price {
 	private final long amount;
@@ -52,16 +53,22 @@ public class Price {
 	}
 
 	@Override
-	public boolean equals(Object other) {
-		if (other instanceof Price) {
-			Price otherPrice = (Price) other;
-			return currency == otherPrice.currency && amount == otherPrice.amount;
-		}
-		return false;
+	public int hashCode() {
+		return Objects.hash(amount, currency);
 	}
 
 	@Override
-	public int hashCode() {
-		return Long.hashCode(amount) + currency.getCurrencyCode().hashCode();
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Price other = (Price) obj;
+		return amount == other.amount && Objects.equals(currency, other.currency);
 	}
 }
